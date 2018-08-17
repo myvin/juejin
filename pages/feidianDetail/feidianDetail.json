@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "沸点详情",
+  "usingComponents": {
+    "feidianItemTop": "/components/feidianItem/feidianItemTop/feidianItemTop"
+  }
+}

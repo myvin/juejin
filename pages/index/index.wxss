@@ -1,0 +1,28 @@
+.btitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90rpx;
+  padding: 0 30rpx;
+  color: #3281ff;
+  font-size: 30rpx;
+  border-bottom: 1px solid #efefef;
+}
+.btitle .icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 15rpx;
+}
+.btitle .l {
+  display: flex;
+  align-items: center;
+}
+.btitle .r .refresh {
+  width: 32rpx;
+  height: 22rpx;
+}
+.btitle .r .close {
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 40rpx;
+}

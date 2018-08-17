@@ -1,0 +1,17 @@
+<view class='item' hover-class='hover-class' wx:for='{{list}}' wx:key='{{index}}'>
+  <image class='icon' mode='aspectFill' src='{{item.icon}}'></image>
+  <view class='content'>
+    <view class='text'>
+      <view class='title'>{{item.title}}</view>
+      <view class='others'>{{item.subscribersCount}}人关注 · {{item.entryCount}}篇文章</view>
+    </view>
+    <view class='focus active' wx:if='{{item.isSubscribe}}'>
+      <image style='width:24rpx;height:22rpx;' src='/img/add_icon_tag_followed.png'></image>
+      <view>已关注</view>
+    </view>
+    <view class='focus' wx:if='{{!item.isSubscribe}}'>
+      <image style='width:22rpx;height:22rpx' src='/img/icon_add_tag.png'></image>
+      <view>关注</view>
+    </view>
+  </view>
+</view>

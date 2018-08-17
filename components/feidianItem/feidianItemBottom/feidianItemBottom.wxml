@@ -1,0 +1,13 @@
+<view class='footer'>
+  <view class='i'>
+    <image wx:if='{{item.isLiked}}' src='/img/zan_green_feidian3.png'></image>
+    <image wx:if='{{!item.isLiked}}'  src='/img/zan_grey_feidian3.png'></image>
+    <text>{{item.likedCount || '赞'}}</text>
+  </view>
+  <view class='i'>
+    <image src='/img/fd_reply.png'></image><text>{{item.commentCount || '评论'}}</text>
+  </view>
+  <view class='i'>
+    <image src='/img/fd_share.png'></image>
+  </view>
+</view>

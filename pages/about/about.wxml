@@ -1,0 +1,39 @@
+<view class='container'>
+  <view class='content'>
+    <view class='item'>
+      <view class='title'>说明</view>
+      <view>该小程序为第三方开发者开发，仅用于学习交流。</view>
+    </view>
+    <view class='item'>
+      <view class='title'>联系开发者</view>
+      <view class='i' catchtap='copy' data-title='GitHub' data-content='{{github}}'>
+        <view class='icon'>
+          <image src='/img/github.png'></image>
+        </view>
+        <view class='text'>
+          <view>通过 GitHub 反馈</view>
+          <view>{{github}}</view>
+        </view>
+      </view>
+      <view class='i' catchtap='copy' data-title='邮箱' data-content='{{email}}'>
+        <view class='icon'>
+          <image src='/img/email.png'></image>
+        </view>
+        <view class='text'>
+          <view>通过 Email 反馈</view>
+          <view>{{email}}</view>
+        </view>
+      </view>
+      <view class='i' catchtap='copy' data-title='QQ' data-content='{{qq}}'>
+        <view class='icon'>
+          <image src='/img/qq.png'></image>
+        </view>
+        <view class='text'>
+          <view>通过 QQ 反馈</view>
+          <view>{{qq}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='footer'>开发者 · myvin</view>
+</view>

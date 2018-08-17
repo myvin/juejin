@@ -1,0 +1,93 @@
+<view class='wrapper'>
+  <view class='card profile'>
+    <view class='info'>
+      <image class='avatar' mode='aspectFill' src='{{userInfo.avatarLarge}}' wx:if='{{userInfo.avatarLarge}}'></image>
+    <image class='avatar' src='/img/empty_avatar_user.png' wx:else></image>
+      <view class='text'>
+        <view class='name'>{{userInfo.username}}</view>
+        <view class='jobtitle'>{{userInfo.jobTitle}}</view>
+        <view class='others'>{{userInfo.selfDescription }}</view>
+      </view>
+    </view>
+    <view class='bottom'>
+      <view class='l'>
+        <view class='action'>
+          <view>{{userInfo.followeesCount}}</view>
+          <view class='key'>关注</view>
+        </view>
+        <view class='action'>
+          <view>{{userInfo.followersCount}}</view>
+          <view class='key'>关注者</view>
+        </view>
+      </view>
+      <!-- <view class='edit'>编辑</view> -->
+      <image src='/img/ic_dynamic_vote.png' class='trend' catchtap='showDataTrend'></image>
+    </view>
+  </view>
+
+  <view class='card items'>
+    <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/dynamic/dynamic?thirduid={{thirduid}}' data-open='true'>
+      <view class='title'>
+        <view>动态</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='card items'>
+    <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/myPins/myPins?thirduid={{thirduid}}' data-open='true'>
+      <view class='title'>
+        <view>沸点</view>
+      </view>
+      <view class='count'>{{userInfo.pinCount || 0}}</view>
+    </view>
+    <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/originalPost/originalPost?thirduid={{thirduid}}' data-open='true'>
+      <view class='title'>
+        <view>原创文章</view>
+      </view>
+      <view class='count'>{{userInfo.postedPostsCount}}</view>
+    </view>
+    <view class='item' wx:if='{{userInfo.postedEntriesCount}}' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/sharePost/sharePost?thirduid={{thirduid}}' data-open='true'>
+      <view class='title'>
+        <view>分享文章</view>
+      </view>
+      <view class='count'>{{userInfo.postedEntriesCount}}</view>
+    </view>
+    <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/collectionSet/collectionSet?thirduid={{thirduid}}' data-open='true'>
+      <view class='title'>
+        <view>收藏集</view>
+      </view>
+      <view class='count'>{{userInfo.collectionSetCount}}</view>
+    </view>
+  </view>
+
+  <view class='card items'>
+    <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/favorate/favorate?thirduid={{thirduid}}' data-open='true'>
+      <view class='title'>
+        <view>喜欢的文章</view>
+      </view>
+      <view class='count'>{{userInfo.collectedEntriesCount}}</view>
+    </view>
+    <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/subscribedTag/subscribedTag?thirduid={{thirduid}}' data-open='true'>
+      <view class='title'>
+        <view>关注的标签</view>
+      </view>
+      <view class='count'>{{userInfo.subscribedTagsCount}}</view>
+    </view>
+  </view>
+
+  <view class='card items'>
+    <view class='item' wx:if='{{userInfo.community && userInfo.community.weibo && userInfo.community.weibo.username}}'>
+      <view class='title'>
+        <image src='/img/icon_profile_weibo.png'></image>
+        <view class='val'>{{userInfo.community.weibo.username}}</view>
+      </view>
+    </view>
+    <view class='item' wx:if='{{userInfo.blogAddress}}'>
+      <view class='title'>
+        <image src='/img/icon_profile_blog.png'></image>
+        <view class='val'>{{userInfo.blogAddress}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>

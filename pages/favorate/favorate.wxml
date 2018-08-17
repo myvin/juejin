@@ -1,0 +1,4 @@
+<empty wx:if='{{!list.length}}'></empty>
+<view class='container' wx:if='{{list.length}}'>
+  <hotItem list='{{list}}' graphics='{{false}}'></hotItem>
+</view>

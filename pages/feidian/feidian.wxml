@@ -1,0 +1,29 @@
+<view class='container'>
+  <view class='recommendList'>
+    <swiper autoplay='{{false}}' circular='{{false}}' duration="500" wx:if='{{recommendList.length}}' next-margin='100rpx' style='height:{{swiperHeight}}'>
+      <block wx:for="{{recommendList}}" wx:key="{{index}}">
+        <swiper-item>
+          <view class='item'>
+            <view class='title' wx:if='{{item.isRecommend}}'>
+              <image class='icon' src='/img/ic_topic_star.png'></image>
+              <text>编辑推荐</text>
+            </view>
+            <view class='title' wx:else>
+              <image class='icon' src='/img/pin_hot.png'></image>
+              <text>热门沸点</text>
+            </view>
+            <view class='content'>
+              <view class='text'>{{item.content}}</view>
+              <view class='img' wx:if='{{item.pictures && item.pictures.length}}'>
+                <image mode='aspectFill' src='{{item.pictures[0]}}'></image>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='pinList'>
+    <feidianItem item='{{item}}' wx:for='{{list}}' wx:key='{{index}}'></feidianItem>
+  </view>
+</view>

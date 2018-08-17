@@ -1,0 +1,45 @@
+.container {
+  text-align: center;
+  align-items: center;
+  padding-top: 60rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+}
+.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.name {
+  font-size: 24rpx;
+  line-height: 2.4em;
+}
+.item {
+  padding-bottom: 120rpx;
+}
+.item .count {
+  font-size: 70rpx;
+}
+.item .key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+}
+.item .key image {
+  width: 26rpx;
+  margin-right: 8rpx;
+}
+.count {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 70rpx;
+  height: 1em;
+  line-height: 1em;
+  overflow: hidden;
+}
+.countInner {
+  transform: translateY(0);
+  transition: 2s;
+}

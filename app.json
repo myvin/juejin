@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/launch/launch",
+    "pages/index/index",
+    "pages/my/my",
+    "pages/personal/personal",
+    "pages/setting/setting",
+    "pages/about/about",
+    "pages/feidian/feidian",
+    "pages/login/login",
+    "pages/search/search",
+    "pages/xiaoce/xiaoce",
+    "pages/post/post",
+    "pages/favorate/favorate",
+    "pages/readHistory/readHistory",
+    "pages/collectionSet/collectionSet",
+    "pages/myPins/myPins",
+    "pages/feedback/feedback",
+    "pages/infoCenter/infoCenter",
+    "pages/entry/entry",
+    "pages/purchasedXiaoce/purchasedXiaoce",
+    "pages/originalPost/originalPost",
+    "pages/sharePost/sharePost",
+    "pages/articleData/articleData",
+    "pages/subscribedTag/subscribedTag",
+    "pages/manageTag/manageTag",
+    "pages/dynamic/dynamic",
+    "pages/feidianDetail/feidianDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#3281ff",
+    "navigationBarTitleText": "掘金",
+    "navigationBarTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#abb4bf",
+    "selectedColor": "#3281ff",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "img/tab_home_normal.png",
+        "selectedIconPath": "img/tab_home.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "搜索",
+        "iconPath": "img/tab_explore_normal.png",
+        "selectedIconPath": "img/tab_explore.png"
+      },
+      {
+        "pagePath": "pages/feidian/feidian",
+        "text": "沸点",
+        "iconPath": "img/tab_feidian_normal.png",
+        "selectedIconPath": "img/tab_feidian.png"
+      },
+      {
+        "pagePath": "pages/xiaoce/xiaoce",
+        "text": "小册",
+        "iconPath": "img/tab_xiaoce_normal.png",
+        "selectedIconPath": "img/tab_xiaoce.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "img/tab_profile_normal.png",
+        "selectedIconPath": "img/tab_profile.png"
+      }
+    ]
+  }
+}

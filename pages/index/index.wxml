@@ -1,0 +1,19 @@
+<wxs module='filters' src='../../filter/filter.wxs'></wxs>
+<view class='container'>
+  <view class='hot card' wx:if='{{hotRecomment.length && hotRrecommendShow}}'>
+    <view class='btitle'>
+      <view class='l'>
+        <image class='icon' src='/img/ic_hot_home.png'></image>
+        <view>热门推荐</view>
+      </view>
+      <view class='r'>
+        <image catchtap='refreshHot' class='refresh {{rotate}}' src='/img/refresh_icon.png'></image>
+        <image catchtap='closeHot' class='close' src='/img/chart_close.png'></image>
+      </view>
+    </view>
+    <postItemOne list='{{hotRecomment}}' graphics='{{true}}'></postItemOne>
+  </view>
+  <view class='timeline'>
+    <postItemTwo list='{{timeline}}'></postItemTwo>
+  </view>
+</view>

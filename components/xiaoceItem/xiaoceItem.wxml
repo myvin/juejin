@@ -1,0 +1,12 @@
+<view class='list' wx:for='{{list}}' wx:key='{{index}}' catchtap='toXiaoceDetail'>
+    <image class='poster' src='{{item.img}}'></image>
+    <view class='info'>
+      <view class='title'>{{item.title}}</view>
+      <view class='author'>{{item.userData && item.userData.username}}</view>
+      <view class='others'>
+        <view><text class='isFinished' wx:if='{{!item.isFinished}}'>预售 · </text><text>{{item.lastSectionCount}}小节 · {{item.buyCount}}人已购买</text></view>
+      </view>
+    </view>
+    <view class='price' wx:if='{{!item.timeLimitDiscountFirstDay}}'>￥{{item.price}}</view>
+    <view class='price' wx:if='{{item.timeLimitDiscountFirstDay}}'>惠￥{{item.price * item.timeLimitDiscountFirstDay.discountCount / 10}}</view>
+  </view>

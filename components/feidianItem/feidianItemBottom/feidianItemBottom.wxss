@@ -1,0 +1,18 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1rpx solid #efefef;
+  height: 80rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+.footer image {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 12rpx;
+}
+.footer .i {
+  display: flex;
+  align-items: center;
+}

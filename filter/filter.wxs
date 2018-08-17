@@ -1,0 +1,53 @@
+var join = function (arr, item, separator) {
+  arr = arr || [];
+  // 最多取前两个 tag
+  return arr.slice(0, 2).map(function(i, index){
+    return i[item];
+  }).join(separator);
+};
+
+var timeBefore = function (date) {
+  if (!date) {
+    return '';
+  }
+  var rexp = getRegExp('TZ', 'g');
+  date = date.replace(rexp, ' ');
+  var dvalue = parseInt(getDate().getTime()) - parseInt(getDate(date).getTime());
+  var minTime = 60 * 1000;
+  var hourTime = 60 * 60 * 1000;
+  var dayTime = 24 * hourTime;
+  var monthTime = 30 * dayTime;
+  var yearTime = 12 * monthTime;
+  if (dvalue < minTime) {
+    return '刚刚';
+  } else if (dvalue >= minTime && dvalue < hourTime) {
+    return parseInt(dvalue / minTime) + '分钟前';
+  } else if (dvalue >= hourTime && dvalue < dayTime) {
+    return parseInt(dvalue / hourTime) + '小时前';
+  } else if (dvalue >= dayTime && dvalue < monthTime) {
+    return parseInt(dvalue / dayTime) + '天前';
+  } else if (dvalue >= monthTime && dvalue < yearTime) {
+    return parseInt(dvalue / monthTime) + '月前';
+  } else if (dvalue >= yearTime) {
+    return parseInt(dvalue / yearTime) + '年前';
+  }
+};
+
+var strToNumArr = function (str) {
+  var arr1 = (str + '').split('');
+  var arr = [];
+  for (i=0, len1 = arr1.length; i < len1; i++) {
+    var arr2 = []
+    for (j = 0, len2 = parseInt(arr1[i]); j <= len2; j++) {
+      arr2.push(j)
+    }
+    arr.push(arr2);
+  }
+  return arr;
+};
+
+module.exports = {
+  join: join,
+  timeBefore: timeBefore,
+  strToNumArr: strToNumArr,
+};

@@ -1,0 +1,4 @@
+<empty wx:if='{{!tagList.length}}'></empty>
+<view class='container' wx:if='{{tagList.length}}'>
+  <tagItem list='{{tagList}}'></tagItem>
+</view>

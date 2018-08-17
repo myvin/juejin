@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "沸点",
+  "usingComponents": {
+    "empty": "/components/empty/empty",
+    "feidianItem": "/components/feidianItem/feidianItem/feidianItem"
+  }
+}

@@ -1,0 +1,22 @@
+.banner {
+  width: 100%;
+  display: block;
+}
+.btitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90rpx;
+  padding: 0 30rpx;
+  font-size: 30rpx;
+  border-bottom: 1px solid #efefef;
+}
+.btitle .icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 15rpx;
+}
+.btitle .l {
+  display: flex;
+  align-items: center;
+}

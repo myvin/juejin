@@ -1,0 +1,4 @@
+<empty wx:if='{{!list.length}}'></empty>
+<view class='container' wx:if='{{list.length}}'>
+  <postItemTwo list='{{list}}'></postItemTwo>
+</view>

@@ -1,0 +1,45 @@
+.wrapper {
+  padding-top: 20rpx;
+}
+.profile {
+  height: 180rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40rpx;
+}
+.profile .avatar {
+  width: 90rpx;
+  height: 90rpx;
+  margin-right: 40rpx;
+}
+.profile .info {
+  display: flex;
+  flex: 1;
+  font-size: 24rpx;
+  color: #abb4bf;
+}
+.profile .name {
+  font-size: 40rpx;
+  color: #333;
+}
+.profile .info .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.profile .more {
+  display: flex;
+  align-items: center;
+}
+.profile .more image {
+  width: 20rpx;
+  height: 40rpx;
+}
+.profile .more .reddot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background: #ff5959;
+  margin-right: 10rpx;
+}

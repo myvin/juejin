@@ -1,0 +1,85 @@
+<view class='wrapper'>
+  <view class='card profile'  catchtap='navigatItem' data-url='/pages/personal/personal'>
+    <view class='info'>
+      <image class='avatar' src='{{userInfo.avatarLarge}}' wx:if='{{userInfo.avatarLarge}}'></image>
+      <image class='avatar' src='/img/empty_avatar_user.png' wx:else></image>
+      <view class='text'>
+        <view class='name'>{{userInfo.username || '登录/注册'}}</view>
+        <view>{{userInfo.jobTitle || '添加职位'}} @ {{userInfo.company || '添加公司'}}</view>
+      </view>
+    </view>
+    <view class='more'>
+      <view class='reddot' wx:if='{{auth && !userInfo.company}}'></view>
+      <image src='/img/profile_arrow.png'></image>
+    </view>
+  </view>
+
+  <view class='card items'>
+    <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/infoCenter/infoCenter'>
+      <view class='title'>
+        <image src='/img/ic_notification.png'></image>
+        <view>消息中心</view>
+      </view>
+      <view class='count reddot' wx:if='{{userNotificationNum}}'>{{userNotificationNum}}</view>
+    </view>
+    <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/favorate/favorate'>
+      <view class='title'>
+        <image src='/img/ic_heart_entry_bottom_full.png'></image>
+        <view>我喜欢的</view>
+      </view>
+      <view class='count'>{{userInfo.collectedEntriesCount || 0}}篇</view>
+    </view>
+    <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/collectionSet/collectionSet'>
+      <view class='title'>
+        <image src='/img/ic_collection_set.png'></image>
+        <view>收藏集</view>
+      </view>
+      <view class='count'>{{userInfo.collectionSetCount || 0}}个</view>
+    </view>
+    <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/purchasedXiaoce/purchasedXiaoce'>
+      <view class='title'>
+        <image src='/img/user_buy.png'></image>
+        <view>已购小册</view>
+      </view>
+      <view class='count'>{{userInfo.purchasedBookletCount
+ || 0}}本</view>
+    </view>
+    <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/myPins/myPins?liked=1'>
+      <view class='title'>
+        <image src='/img/user_liked_pin.png'></image>
+        <view>赞过的沸点</view>
+      </view>
+      <view class='count'>{{userInfo.likedPinCount || 0}}个</view>
+    </view>
+    <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/readHistory/readHistory'>
+      <view class='title'>
+        <image src='/img/view.png'></image>
+        <view>阅读过的文章</view>
+      </view>
+      <view class='count'>{{userInfo.viewedEntriesCount || 0}}篇</view>
+    </view>
+    <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/manageTag/manageTag'>
+      <view class='title'>
+        <image src='/img/tag.png'></image>
+        <view>标签管理</view>
+      </view>
+      <view class='count'>{{userInfo.subscribedTagsCount || 0}}个</view>
+    </view>
+  </view>
+
+  <view class='card items'>
+    <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/feedback/feedback' data-open='true'>
+      <view class='title'>
+        <image src='/img/icon_feed_back.png'></image>
+        <view>意见反馈</view>
+      </view>
+    </view>
+    <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/setting/setting' data-open='true'>
+      <view class='title'>
+        <image src='/img/settings.png'></image>
+        <view>设置</view>
+      </view>
+    </view>
+  </view>
+
+</view>

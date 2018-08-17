@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "小册",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "xiaoceItem": "/components/xiaoceItem/xiaoceItem"
+  }
+}

@@ -1,0 +1,70 @@
+.wrapper {
+  padding-top: 20rpx;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  padding: 0 40rpx;
+}
+.profile .avatar {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  margin-right: 40rpx;
+}
+.profile .info {
+  min-height: 90rpx;
+  padding: 20rpx 0;
+  display: flex;
+  align-items: flex-start;
+  font-size: 24rpx;
+  color: #abb4bf;
+}
+.profile .name,
+.profile .jobtitle {
+  font-size: 30rpx;
+  color: #333;
+}
+.profile .info .text {
+  flex: 1;
+  min-height: 90rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.profile .others {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.profile .bottom {
+  height: 130rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile .bottom .l {
+  display: flex;
+}
+.profile .bottom .action {
+  margin-right: 100rpx;
+  font-size: 28rpx;
+}
+.profile .bottom .key {
+  color: #abb4bf;
+  font-size: 24rpx;
+}
+.profile .bottom .edit {
+  color: #3281ff;
+  height: 60rpx;
+  padding: 0 30rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 8rpx;
+  border: 1px solid #3281ff;
+}
+.trend {
+  width: 60rpx;
+  height: 60rpx;
+}

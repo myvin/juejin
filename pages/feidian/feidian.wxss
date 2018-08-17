@@ -1,0 +1,54 @@
+.recommendList {
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 0 10rpx;
+}
+swiper-item {
+  box-sizing: border-box;
+  padding: 20rpx 10rpx;
+}
+.recommendList .item {
+  background: #fff;
+  border-radius: 4rpx;
+  width: 100%;
+  display: inline-block;
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+}
+.recommendList .title {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  margin-bottom: 10rpx;
+}
+.recommendList .title .icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.recommendList .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 120rpx;
+  color: #666;
+}
+.recommendList .content .text {
+  flex: 1;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.recommendList .content .img {
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: 20rpx;
+}
+.recommendList .content image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 4rpx;
+}

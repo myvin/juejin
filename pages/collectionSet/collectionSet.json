@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "收藏集",
+  "usingComponents": {
+    "empty": "/components/empty/empty"
+  }
+}

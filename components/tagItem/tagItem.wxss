@@ -1,0 +1,52 @@
+.item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 20rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #efefef;
+}
+.icon {
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+}
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90rpx;
+  padding-left: 20rpx;
+}
+.content .text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.content .others {
+  font-size: 24rpx;
+  color: #999;
+}
+.focus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  width: 150rpx;
+  height: 60rpx;
+  border: 1rpx solid #3ec700;
+  border-radius: 6rpx;
+  background: #fff;
+  color: #3ec700;
+}
+.focus.active {
+  background: #3ec700;
+  color: #fff;
+}
+.focus image {
+  margin-right: 10rpx;
+}

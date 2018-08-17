@@ -1,0 +1,119 @@
+::-webkit-scrollbar {
+  display: none;
+}
+page {
+  -webkit-font-smoothing: antialiased;
+  font-family: "PingHei","Helvetica Neue","Helvetica","Arial","Verdana","sans-serif";
+  font-size: 28rpx;
+  background: #F4F6F9;
+}
+.card {
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.items .item {
+  height: 90rpx;
+  padding: 0 40rpx;
+  border-bottom: 1rpx solid #efefef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.items .item:last-child {
+  border-bottom: none;
+}
+.items .item .title {
+  flex: 1;
+  font-size: 32rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+.items .item image {
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 40rpx;
+}
+.items .item .count {
+  font-size: 24rpx;
+  color: #abb4bf;
+}
+.items .item .count.reddot {
+  height: 30rpx;
+  line-height: 30rpx;
+  border-radius: 15rpx;
+  padding: 0 7px;
+  background: #ff5959;
+  color: #fff;
+}
+.rotate {
+  -webkit-animation: rotate .8s linear infinite;
+  animation: rotate .8s linear infinite;
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
+.hover-class,
+.navigator-hover {
+  background: #f2f2f2 !important;
+}
+
+/* 滑动切换 tab 样式 */
+.top.tabs {
+  position: relative;
+}
+.top.tabs .inner {
+  display: flex;
+  align-items: center;
+  background: #3281ff;
+  color: #fff;
+}
+.top.tabs .tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 80rpx;
+  color: #ccc;
+  transition: 250ms ease-out;
+}
+.top.tabs .tab.active {
+  transition: 250ms ease-out;
+  color: #fff;
+}
+.top.tabs .bar {
+  position: absolute;
+  top: 78rpx;
+  left: 0;
+  width: 50%;
+  height: 2rpx;
+  background: #fff;
+  transition: 250ms ease-out;
+}
+/* 用于滑动 tab 的 swiper 样式 */
+swiper.swiper {
+  flex: 1;
+}
+.swiper swiper-item {
+  overflow: scroll;
+}
+.swiper scroll-view {
+  height: 100%;
+}

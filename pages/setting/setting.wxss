@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+.item.signout .title {
+  color: rgb(201, 40, 15);
+  justify-content: space-around;
+}
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80rpx;
+  font-size: 24rpx;
+  color: #333;
+  margin-top: 30rpx;
+}

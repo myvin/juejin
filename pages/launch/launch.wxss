@@ -1,0 +1,44 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.bcg {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+.top,
+.bottom {
+  position: relative;
+  z-index: 2;
+}
+.top {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 52rpx;
+  color: #000;
+  font-weight: 300;
+}
+.top .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.top image {
+  width: 200rpx;
+  margin-bottom: 40rpx;
+}
+.bottom {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 70rpx;
+}
+.bottom image {
+  width: 580rpx;
+}

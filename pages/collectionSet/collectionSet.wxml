@@ -1,0 +1,35 @@
+<view class='container'>
+  <view class='top tabs'>
+    <view class='inner'>
+      <view class='tab {{currentSwiper === "0" ? "active" : ""}}' data-index='0' catchtap='switchSwiper'>创建的</view>
+      <view class='tab {{currentSwiper === "1" ? "active" : ""}}' data-index='1' catchtap='switchSwiper'>关注的</view>
+    </view>
+    <view class='bar' style='left:{{currentSwiper*50}}%'></view>
+  </view>
+  <swiper class='swiper' autoplay='{{false}}' indicator-dots='{{false}}' bindchange='swiperChanged' current='{{currentSwiper}}'>
+    <swiper-item item-id='0'>
+      <view class='users'>
+        <view class='item' wx:for='{{listUser}}' wx:key='{{index}}'>
+          <image src='{{item.bgImg && item.bgImg.url}}' class='cover' mode='aspectFill'></image>
+          <view class='content'>
+            <view class='title'>{{item.title}}</view>
+            <view class='others'>{{item.entryCount}}篇 · {{item.followCount}}关注</view>
+          </view>
+        </view>
+      </view>
+      <empty wx:if='{{!listUser.length}}' img='/img/ic_empty_collecitonset.png' tip='暂无创建的收藏集'></empty>
+    </swiper-item>
+    <swiper-item item-id='1'>
+      <view class='follows' wx:if='{{listFollowed.length}}'>
+        <view class='item' wx:for='{{listFollowed}}' wx:key='{{index}}'>
+          <image src='{{item.bgImg && item.bgImg.url}}' class='cover' mode='aspectFill'></image>
+          <view class='content'>
+            <view class='title'>{{item.title}}</view>
+            <view class='others'>{{item.entryCount}}篇 · {{item.followCount}}关注 · 作者</view>
+          </view>
+        </view>
+      </view>
+      <empty wx:if='{{!listFollowed.length}}' img='/img/ic_empty_collecitonset.png' tip='暂无关注的收藏集'></empty>
+    </swiper-item>
+  </swiper>
+</view>

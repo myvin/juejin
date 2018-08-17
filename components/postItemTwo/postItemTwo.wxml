@@ -1,0 +1,28 @@
+<wxs module='filters' src='../../filter/filter.wxs'></wxs>
+<!-- type: post, article -->
+<view class='item card' hover-class='hover-class' wx:for='{{list}}' wx:key='{{index}}' data-item='{{item}}' catchtap='toPostDetail'>
+  <view class='header'>
+    <view class='name' data-item='{{item}}' catchtap='toPersonal'>
+      <image mode='aspectFill' src='{{item.user.avatarLarge || "/img/default_avatar.png"}}'></image>
+      <view>{{item.user.username}}</view>
+    </view>
+    <view class='type'>{{filters.join(item.tags, 'title', ' / ')}}</view>
+  </view>
+  <view class='content'>
+    <view class='text'>
+      <view class='title'>{{item.title}}</view>
+      <view class='desc'>{{item.content}}</view>
+    </view>
+    <image mode='aspectFill' class='img' src='{{item.screenshot}}' wx:if='{{item.screenshot}}'></image>
+  </view>
+  <view class='footer'>
+    <view class='label'>
+      <image src='/img/ic_dynamic_collect.png'></image>
+      <view>{{item.collectionCount || '喜欢'}}</view>
+    </view>
+    <view class='label'>
+      <image src='/img/ic_dynamic_comment.png'></image>
+      <view>{{item.commentsCount || '评论'}}</view>
+    </view>
+  </view>
+</view>

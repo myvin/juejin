@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "feidianItemTop": "/components/feidianItem/feidianItemTop/feidianItemTop",
+    "feidianItemBottom": "/components/feidianItem/feidianItemBottom/feidianItemBottom"
+  }
+}

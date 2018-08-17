@@ -1,0 +1,58 @@
+<view class='container'>
+  <view class='content'>
+    <view class='card items' wx:if='{{auth}}'>
+      <view class='item'>
+        <view class='title'>
+          <view>邮箱</view>
+        </view>
+        <view class='count'>{{userInfo.email}}</view>
+      </view>
+      <view class='item' wx:if='{{auth}}'>
+        <view class='title'>
+          <view>手机号</view>
+        </view>
+        <view class='count'>{{userInfo.mobilePhoneNumber}}</view>
+      </view>
+      <!-- <view class='item'>
+        <view class='title'>
+          <view>修改账户密码</view>
+        </view>
+      </view> -->
+    </view>
+
+    <!-- <view class='card items'>
+      <view class='item'>
+        <view class='title'>
+          <view>清除缓存</view>
+        </view>
+        <view class='count'>0B</view>
+      </view>
+      <view class='item'>
+        <view class='title'>
+          <view>自动检查粘贴板快速分享</view>
+        </view>
+      </view>
+    </view> -->
+
+    <view class='card items'>
+      <navigator url='/pages/about/about'>
+        <view class='item'>
+          <view class='title'>
+            <view>关于</view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+    <view class='card items' wx:if='{{auth}}'>
+      <view class='item signout' catchtap='signout'>
+        <view class='title'>
+          <view>退出登录</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <navigator url='/pages/about/about' hover-class='none'>
+    <view class='footer'>开发者 · myvin</view>
+  </navigator>
+</view>
