@@ -25,7 +25,8 @@
     "pages/subscribedTag/subscribedTag",
     "pages/manageTag/manageTag",
     "pages/dynamic/dynamic",
-    "pages/feidianDetail/feidianDetail"
+    "pages/feidianDetail/feidianDetail",
+    "pages/miniqrcode/miniqrcode"
   ],
   "window": {
     "backgroundTextStyle": "dark",

@@ -80,6 +80,12 @@
         <view>设置</view>
       </view>
     </view>
+    <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/miniqrcode/miniqrcode' data-open='true'>
+      <view class='title'>
+        <image src='/img/qrcode.png' style='width:28rpx;height:28rpx;padding:10rpx'></image>
+        <view>小程序码</view>
+      </view>
+    </view>
   </view>
 
 </view>

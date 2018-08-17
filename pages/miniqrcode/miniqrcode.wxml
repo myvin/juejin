@@ -1,0 +1,3 @@
+<view class='container'>
+  <image mode='widthFix' src='{{miniqrcode}}' catchtap='previewImages'></image>
+</view>
