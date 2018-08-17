@@ -1,5 +1,6 @@
 Page({
   data: {
+    projectAddress: 'https://github.com/myvin/juejin',
     github: 'https://github.com/myvin',
     email: '851399101@qq.com',
     qq: '851399101',
