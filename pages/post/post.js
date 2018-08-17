@@ -130,4 +130,7 @@ Page({
       },
     })
   },
+  onShareAppMessage(res) {
+    return {}
+  },
 })

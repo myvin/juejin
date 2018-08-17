@@ -124,4 +124,7 @@ Page({
       scrollTop: e.scrollTop,
     })
   },
+  onShareAppMessage(res) {
+    return {}
+  },
 })

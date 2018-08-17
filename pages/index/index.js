@@ -222,4 +222,7 @@ Page({
   onReachBottom () {
     this.getEntryByTimeline()
   },
+  onShareAppMessage(res) {
+    return {}
+  },
 })

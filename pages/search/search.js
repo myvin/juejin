@@ -102,4 +102,7 @@ Page({
   onReachBottom() {
     this.getEntryByRank()
   },
+  onShareAppMessage(res) {
+    return {}
+  },
 })

@@ -87,4 +87,7 @@ Page({
       this.getXiaoce()
     }
   },
+  onShareAppMessage(res) {
+    return {}
+  },
 })
