@@ -70,3 +70,7 @@
   align-items: center;
   height: 80rpx;
 }
+.hover-class,
+.navigator-hover {
+  background: #f2f2f2 !important;
+}
