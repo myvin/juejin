@@ -8,6 +8,7 @@ Page({
     hotRecomment: [],
     hotRrecommendShow: true,
     auth: {},
+    logined: true,
     rotate: '',
   },
   onShow () {
@@ -30,6 +31,7 @@ Page({
     let auth = utils.ifLogined()
     this.setData({
       auth,
+      logined: auth,
     })
     this.getBannerImgList()
     this.getEntryByTimeline(true)

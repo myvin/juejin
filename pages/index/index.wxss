@@ -1,3 +1,23 @@
+.guide {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+}
+.guide .l {
+  flex: 1;
+}
+.guide .l .t,
+.guide .r {
+  font-size: 30rpx;
+}
+.guide .l .c {
+  line-height: 1.8em;
+  color: #666;
+}
+.guide .r {
+  font-size: 32rpx;
+  color: #3281ff;
+}
 .btitle {
   display: flex;
   align-items: center;

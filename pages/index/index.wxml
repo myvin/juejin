@@ -1,5 +1,14 @@
 <wxs module='filters' src='../../filter/filter.wxs'></wxs>
 <view class='container'>
+  <navigator url='/pages/login/login' wx:if='{{!logined}}'>
+    <view class='card guide'>
+      <view class='l'>
+        <view class='t'>登录账号</view>
+        <view class='c'>收藏文章，同步阅读记录，数据永不丢失</view>
+      </view>
+      <view class='r'>登录</view>
+    </view>
+  </navigator>
   <view class='hot card' wx:if='{{hotRecomment.length && hotRrecommendShow}}'>
     <view class='btitle'>
       <view class='l'>
