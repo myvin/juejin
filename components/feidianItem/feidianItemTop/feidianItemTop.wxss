@@ -31,12 +31,16 @@
   height: 24rpx;
 }
 .content {
+  display: block;
   margin: 20rpx 30rpx;
+  color: #666;
+  word-break: break-all;
+}
+.content.intro {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   overflow: hidden;
-  color: #666;
 }
 .pictures {
   padding: 0 30rpx 30rpx;

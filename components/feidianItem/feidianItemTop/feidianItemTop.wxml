@@ -16,7 +16,7 @@
     </view>
   </view>
 </view>
-<text decode class='content' data-id='{{item.objectId}}' catchtap='toFeidianDetail'>{{item.content}}</text>
+<text decode class='content {{intro ? "intro" : ""}}' data-id='{{item.objectId}}' catchtap='toFeidianDetail'>{{item.content}}</text>
 <view class='pictures' wx:if='{{item.pictures && item.pictures.length}}'>
   <!-- 大于等于两张图片 -->
   <view class='picture' style='width:33.33%;' wx:key='{{index}}' wx:for='{{item.pictures}}' wx:for-item='i' wx:if='{{item.pictures.length >= 2}}'>

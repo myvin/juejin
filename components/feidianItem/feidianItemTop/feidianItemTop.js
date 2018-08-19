@@ -4,6 +4,11 @@ Component({
       type: Object,
       value: {}
     },
+    // 默认显示摘要，不显示全文
+    intro: {
+      type: Boolean,
+      value: true
+    }
   },
   methods: {
     toFeidianDetail (e) {
