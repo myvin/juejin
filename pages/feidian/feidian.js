@@ -12,16 +12,13 @@ Page({
   onShow () {
     // 如果 scrollTop 为 0，也 reload
     if (utils.pageReload(this.data.auth, [this.data.list]) || !this.data.scrollTop) {
-      this.init()
+      wx.startPullDownRefresh({})
     }
   },
   onPullDownRefresh() {
     this.init()
   },
   init() {
-    wx.showLoading({
-      title: '数据加载中',
-    })
     this.setData({
       auth: {},
     })
@@ -113,6 +110,9 @@ Page({
           title: '网路开小差，请稍后再试',
           icon: 'none',
         })
+      },
+      complete: () => {
+        wx.stopPullDownRefresh()
       },
     })
   },

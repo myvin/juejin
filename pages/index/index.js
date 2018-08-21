@@ -13,16 +13,13 @@ Page({
   },
   onShow () {
     if (utils.pageReload(this.data.auth, [this.data.timeline])) {
-      this.init()
+      wx.startPullDownRefresh({})
     }
   },
   onPullDownRefresh() {
     this.init()
   },
   init() {
-    wx.showLoading({
-      title: '数据加载中',
-    })
     this.setData({
       hotRrecommendShow: this.data.hotRrecommendShow,
       auth: {},
