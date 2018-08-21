@@ -17,7 +17,7 @@ Page({
         username: userInfo.username,
         postedEntriesCount: 0,
         totalCollectionsCount: this.generateZeroArr(userInfo.totalCollectionsCount.length),
-        totalViewsCount: this.generateZeroArr(userInfo.totalViewsCount.length),
+        totalViewsCount: this.generateZeroArr(userInfo.totalViewsCount && userInfo.totalViewsCount.length),
         totalCommentsCount: this.generateZeroArr(userInfo.totalCommentsCount.length),
       },
     })
