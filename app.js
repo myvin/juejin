@@ -10,7 +10,8 @@ App({
   globalData: {
     systeminfo: {},
     config: {
-      loginRequestUrl: 'https://juejin.im/auth/type/phoneNumber',
+      loginRequestUrlByMobile: 'https://juejin.im/auth/type/phoneNumber',
+      loginRequestUrlByEMail: 'https://juejin.im/auth/type/email',
       notifyRequestUrl: 'https://ufp-api-ms.juejin.im/v1',
       bannerRequestUrl: 'https://banner-storage-ms.juejin.im/v1',
       timelineRequestUrl: 'https://timeline-merger-ms.juejin.im/v1',

@@ -5,7 +5,7 @@
     </view>
     <form class='form' bindsubmit='commit'>
       <view>
-        <input name='phoneNumber' placeholder='手机号' maxlength='11' focus></input>
+        <input name='phoneNumber' placeholder='手机号/邮箱' focus></input>
         <input name='password' placeholder='密码' password='true' value='{{password}}'></input>
       </view>
       <button class='login' formType='submit'>登录</button>

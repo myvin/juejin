@@ -5,12 +5,13 @@ Page({
     mobile: '',
     password: '',
   },
-  login (params) {
+  login (params, Type) {
     wx.showLoading({
       title: '加载中...',
     })
+    let url = (Type === 1 ? config.loginRequestUrlByMobile : config.loginRequestUrlByEMail)
     wx.request({
-      url: `${config.loginRequestUrl}`,
+      url,
       method: "POST",
       data: params,
       success: function (res) {
@@ -66,9 +67,11 @@ Page({
   },
   commit(e) {
     let values = e.detail.value
-    if (!utils.isValidMobile(values.phoneNumber)) {
+    let phoneNumber = values.phoneNumber || ''
+    let password = values.password || ''
+    if (!phoneNumber.replace(/\s+/g, '')) {
       wx.showToast({
-        title: '请输入正确的手机号',
+        title: '请输入账号',
         icon: 'none',
       })
       return
@@ -80,6 +83,15 @@ Page({
       })
       return
     }
-    this.login(values)
+
+    if (values.phoneNumber.indexOf('@') !== -1) {
+      let params = {
+        email: values.phoneNumber,
+        password: values.password,
+      }
+      this.login(params, 2)
+    } else {
+      this.login(values, 1)
+    }
   },
 })
