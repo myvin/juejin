@@ -18,7 +18,7 @@ Page({
   switchSwiper(e) {
     let index = e.currentTarget.dataset.index
     this.setData({
-      currentSwiper: parseInt(index),
+      currentSwiper: index,
     })
   },
   swiperChanged(e) {
