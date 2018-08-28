@@ -28,25 +28,11 @@
 
 > `PC` 开发者工具录制，会有些卡顿
 
-<img src='https://user-gold-cdn.xitu.io/2018/8/17/1654665c893411a1?w=375&h=667&f=gif&s=1571950'>
-<img src='https://user-gold-cdn.xitu.io/2018/8/17/1654668f178b1e6c?w=375&h=667&f=gif&s=1902000'>
-<img src='https://user-gold-cdn.xitu.io/2018/8/17/165466a23b637491?w=375&h=667&f=gif&s=1328318'>
-<img src='https://user-gold-cdn.xitu.io/2018/8/17/165466afde516b27?w=375&h=667&f=gif&s=2003104'>
-<img src='https://user-gold-cdn.xitu.io/2018/8/17/16546b3482680c2d?w=375&h=667&f=gif&s=428130'>
-<img src='https://user-gold-cdn.xitu.io/2018/8/17/16546b38638cd558?w=375&h=667&f=gif&s=427959'>
-<img src='https://user-gold-cdn.xitu.io/2018/8/17/16546caa90108b33?w=375&h=667&f=gif&s=3329762'>
-<img src='https://user-gold-cdn.xitu.io/2018/8/17/165466ef8f0f0f3e?w=375&h=667&f=gif&s=131121'>
+<img src='https://user-gold-cdn.xitu.io/2018/8/17/1654665c893411a1?w=375&h=667&f=gif&s=1571950'><img src='https://user-gold-cdn.xitu.io/2018/8/17/1654668f178b1e6c?w=375&h=667&f=gif&s=1902000'><img src='https://user-gold-cdn.xitu.io/2018/8/17/165466a23b637491?w=375&h=667&f=gif&s=1328318'><img src='https://user-gold-cdn.xitu.io/2018/8/17/165466afde516b27?w=375&h=667&f=gif&s=2003104'><img src='https://user-gold-cdn.xitu.io/2018/8/17/16546b3482680c2d?w=375&h=667&f=gif&s=428130'><img src='https://user-gold-cdn.xitu.io/2018/8/17/16546b38638cd558?w=375&h=667&f=gif&s=427959'><img src='https://user-gold-cdn.xitu.io/2018/8/17/16546caa90108b33?w=375&h=667&f=gif&s=3329762'><img src='https://user-gold-cdn.xitu.io/2018/8/17/165466ef8f0f0f3e?w=375&h=667&f=gif&s=131121'>
 
 > 文章数据入口调整了，也保留了动画，请酌情忽略 `gif` 卡顿
 
-<img src='https://user-gold-cdn.xitu.io/2018/8/17/165467078dc95a86?w=375&h=667&f=gif&s=33983'>
-<img src='https://user-gold-cdn.xitu.io/2018/8/17/165467baad411893?w=375&h=667&f=gif&s=909792'>
-<img src='https://user-gold-cdn.xitu.io/2018/8/17/16546bd4c1ef6b8e?w=375&h=667&f=gif&s=3563749'>
-<img src='https://user-gold-cdn.xitu.io/2018/8/17/165467bddb5161ab?w=375&h=667&f=gif&s=1733393'>
-<img src='https://user-gold-cdn.xitu.io/2018/8/17/165467c042b7fbb4?w=375&h=667&f=gif&s=171333'>
-<img src='https://user-gold-cdn.xitu.io/2018/8/17/165467c318b6a087?w=375&h=668&f=gif&s=34910'>
-<img src='https://user-gold-cdn.xitu.io/2018/8/17/165467faf44ed0bd?w=375&h=667&f=gif&s=39546'>
-<img src='https://user-gold-cdn.xitu.io/2018/8/17/1654687295d78859?w=375&h=667&f=gif&s=12671'>
+<img src='https://user-gold-cdn.xitu.io/2018/8/17/165467078dc95a86?w=375&h=667&f=gif&s=33983'><img src='https://user-gold-cdn.xitu.io/2018/8/17/165467baad411893?w=375&h=667&f=gif&s=909792'><img src='https://user-gold-cdn.xitu.io/2018/8/17/16546bd4c1ef6b8e?w=375&h=667&f=gif&s=3563749'><img src='https://user-gold-cdn.xitu.io/2018/8/17/165467bddb5161ab?w=375&h=667&f=gif&s=1733393'><img src='https://user-gold-cdn.xitu.io/2018/8/17/165467c042b7fbb4?w=375&h=667&f=gif&s=171333'><img src='https://user-gold-cdn.xitu.io/2018/8/17/165467c318b6a087?w=375&h=668&f=gif&s=34910'><img src='https://user-gold-cdn.xitu.io/2018/8/17/165467faf44ed0bd?w=375&h=667&f=gif&s=39546'><img src='https://user-gold-cdn.xitu.io/2018/8/17/1654687295d78859?w=375&h=667&f=gif&s=12671'>
 
 # 完成度
 
