@@ -26,7 +26,8 @@
     "pages/manageTag/manageTag",
     "pages/dynamic/dynamic",
     "pages/feidianDetail/feidianDetail",
-    "pages/miniqrcode/miniqrcode"
+    "pages/miniqrcode/miniqrcode",
+    "pages/xiaocedetail/xiaocedetail"
   ],
   "window": {
     "backgroundTextStyle": "dark",
