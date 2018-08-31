@@ -7,10 +7,9 @@ Component({
   },
   methods: {
     toXiaoceDetail(e) {
-      console.log('to xiaoce detail')
-      // wx.navigateTo({
-      //   url: `/pages/post/post?id=${e.currentTarget.dataset.id}`,
-      // })
+      wx.navigateTo({
+        url: `/pages/xiaocedetail/xiaocedetail?id=${e.currentTarget.dataset.id}`,
+      })
     },
   },
 })

@@ -1,4 +1,4 @@
-<view class='list' wx:for='{{list}}' wx:key='{{index}}' catchtap='toXiaoceDetail'>
+<view class='list' wx:for='{{list}}' wx:key='{{index}}' data-id='{{item._id}}' catchtap='toXiaoceDetail'>
     <image class='poster' src='{{item.img}}'></image>
     <view class='info'>
       <view class='title'>{{item.title}}</view>
