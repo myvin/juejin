@@ -204,3 +204,36 @@ view{
 .wxParse-figure {
   overflow: hidden;
 }
+/* 自定义覆盖样式 */
+.wxParse-p {
+  margin-top: 44rpx;
+  margin-bottom: 44rpx;
+  line-height: 52rpx;
+}
+.wxParse-h1 {
+  font-size: 48rpx;
+}
+.wxParse-h2 {
+  font-size: 40rpx;
+  padding-bottom: 24rpx;
+  border-bottom: 1rpx solid #ececec;
+}
+.wxParse-a {
+  color: #0269c8;
+  border-bottom: 1rpx solid #d1e9ff;
+}
+.wxParse-li-circle {
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+.wxParse-li-text {
+  line-height: 52rpx;
+}
+.wxParse-hr {
+  border-top: 1rpx solid #ddd;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  margin-top: 32rpx;
+  margin-bottom: 32rpx;
+}
