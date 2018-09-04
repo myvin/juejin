@@ -41,6 +41,10 @@ Page({
             this.setData({
               author,
             })
+            // 设置 title 为小册标题
+            wx.setNavigationBarTitle({
+              title: author.title || '小册',
+            })
             let article = (author.summaryHtml) || ''
             WxParse.wxParse('article', 'html', article, this)
           }
