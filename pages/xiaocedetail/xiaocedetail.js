@@ -1,3 +1,4 @@
+const WxParse = require('../../wxParse/wxParse.js')
 const config = getApp().globalData.config
 const utils = require('../../utils/utils.js')
 Page({
@@ -40,6 +41,8 @@ Page({
             this.setData({
               author,
             })
+            let article = (author.summaryHtml) || ''
+            WxParse.wxParse('article', 'html', article, this)
           }
         } else {
           if (data.s === 2) {

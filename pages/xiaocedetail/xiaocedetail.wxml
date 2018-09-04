@@ -1,3 +1,4 @@
+<import src="../../wxParse/wxParse.wxml"/>
 <view>
   <view class='author'>
     <image class='poster' src='{{author.img}}' mode='widthFix'></image>
@@ -27,5 +28,8 @@
         <image class='lock' src='/img/ic_xiaoce_lock.png' wx:if='{{!item.isFree}}'></image>
       </view>
     </view>
+  </view>
+  <view class='summary'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
   </view>
 </view>
