@@ -1,0 +1,5 @@
+@import '/wxParse/wxParse.wxss';
+.wrapper {
+  background: #fff;
+  padding: 30rpx;
+}

@@ -21,6 +21,11 @@ Page({
       url: `/pages/personal/personal?thirduid=${e.currentTarget.dataset.uid}`,
     })
   },
+  toProbation (e) {
+    wx.navigateTo({
+      url: `/pages/probation/probation?id=${e.currentTarget.dataset.sectionid}`,
+    })
+  },
   // 获取作者信息
   getAuthorDetail(id) {
     let auth = this.data.auth

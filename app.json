@@ -27,7 +27,8 @@
     "pages/dynamic/dynamic",
     "pages/feidianDetail/feidianDetail",
     "pages/miniqrcode/miniqrcode",
-    "pages/xiaocedetail/xiaocedetail"
+    "pages/xiaocedetail/xiaocedetail",
+    "pages/probation/probation"
   ],
   "window": {
     "backgroundTextStyle": "dark",
