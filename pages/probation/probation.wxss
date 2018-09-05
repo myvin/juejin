@@ -29,5 +29,6 @@
   font-size: 24rpx;
   color: #fff;
   background: #3281ff;
-  padding: 10rpx 12rpx;
+  padding: 15rpx 20rpx;
+  border-radius: 4rpx;
 }
