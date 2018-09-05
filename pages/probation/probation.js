@@ -4,16 +4,33 @@ const utils = require('../../utils/utils.js')
 Page({
   data: {
     auth: {},
+    img: '',
+    free: true,
+    price: 0,
   },
   onLoad(e) {
     let auth = utils.ifLogined()
     this.setData({
       auth,
     })
+    if (e.isFree === 'false') {
+      let pages = getCurrentPages()
+      let currentPage = pages[pages.length - 2]
+      let author = currentPage.data.author
+      this.setData({
+        free: false,
+        img: author.img,
+        price: author.price,
+      })
+      return
+    }
     this.getSection(e.id)
   },
   // 获取作者信息
   getSection(id) {
+    wx.showLoading({
+      title: '加载中',
+    })
     let auth = this.data.auth
     wx.request({
       url: `${config.xiaoceCacheApiMs}/getSection`,
@@ -27,6 +44,7 @@ Page({
       success: (res) => {
         let data = res.data
         if (data.s === 1) {
+          wx.hideLoading()
           let d = data.d
           if (!utils.isEmptyObject(d)) {
             // 设置 title 为小册标题
@@ -37,11 +55,8 @@ Page({
             WxParse.wxParse('article', 'html', article, this)
           }
         } else {
-          if (data.s === 2) {
-            // no result
-            this.setData({
-              noResult: true,
-            })
+          if (data.s === 4) {
+            wx.hideLoading()
           } else {
             wx.showToast({
               title: data.m.toString(),

@@ -22,8 +22,9 @@ Page({
     })
   },
   toProbation (e) {
+    let dataset = e.currentTarget.dataset
     wx.navigateTo({
-      url: `/pages/probation/probation?id=${e.currentTarget.dataset.sectionid}`,
+      url: `/pages/probation/probation?id=${dataset.sectionid}&isFree=${dataset.isfree}`,
     })
   },
   // 获取作者信息

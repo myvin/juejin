@@ -17,7 +17,7 @@
   </view>
   <view class='heading'>小册内容</view>
   <view class='sections'>
-    <view class='section' wx:for='{{sections}}' wx:key='{{index}}' data-sectionid='{{item._id}}' catchtap='toProbation'>
+    <view class='section' wx:for='{{sections}}' wx:key='{{index}}' data-isfree='{{item.isFree}}' data-sectionid='{{item._id}}' catchtap='toProbation'>
       <view class='num'>{{index + 1}}</view>
       <view class='info'>
         <view class='title'>{{item.title}}</view>
