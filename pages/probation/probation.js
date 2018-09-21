@@ -7,6 +7,7 @@ Page({
     img: '',
     free: true,
     price: 0,
+    timeLimitDiscountFirstDay: 0,
   },
   onLoad(e) {
     let auth = utils.ifLogined()
@@ -21,6 +22,7 @@ Page({
         free: false,
         img: author.img,
         price: author.price,
+        timeLimitDiscountFirstDay: author.timeLimitDiscountFirstDay,
       })
       return
     }

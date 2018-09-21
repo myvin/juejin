@@ -6,5 +6,6 @@
   <image src='{{img}}' mode='widthFix'></image>
   <view class='title'>此章节为付费章节</view>
   <view class='sub'>现在购买立即解锁全部内容</view>
-  <view class='btn'>请去官方渠道购买 ￥{{price}}</view>
+  <view class='btn' wx:if='{{!timeLimitDiscountFirstDay}}'>请去官方渠道购买 ￥{{price}}</view>
+  <view class='btn' wx:if='{{timeLimitDiscountFirstDay}}'>请去官方渠道购买 ￥{{price * timeLimitDiscountFirstDay.discountCount / 10}}</view>
 </view>
