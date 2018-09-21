@@ -24,6 +24,9 @@ Page({
         price: author.price,
         timeLimitDiscountFirstDay: author.timeLimitDiscountFirstDay,
       })
+      wx.setNavigationBarTitle({
+        title: '购买小册',
+      })
       return
     }
     this.getSection(e.id)
