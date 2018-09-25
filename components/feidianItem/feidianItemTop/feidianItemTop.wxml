@@ -17,6 +17,13 @@
   </view>
 </view>
 <text decode class='content {{intro ? "intro" : ""}}' data-id='{{item.objectId}}' catchtap='toFeidianDetail'>{{item.content}}</text>
+<view class='topic' wx:if='{{item.urlTitle || item.url}}'>
+  <view class='desc'>
+    <view>{{item.urlTitle}}</view>
+    <view class='url'>{{item.url}}</view>
+  </view>
+  <image wx:if='{{item.urlPic}}' src='{{item.urlPic}}' mode='aspectFill'></image>
+</view>
 <view class='pictures' wx:if='{{item.pictures && item.pictures.length}}'>
   <!-- 大于等于两张图片 -->
   <view class='picture' style='width:33.33%;' wx:key='{{index}}' wx:for='{{item.pictures}}' wx:for-item='i' wx:if='{{item.pictures.length >= 2}}'>
@@ -27,3 +34,4 @@
     <image mode='widthFix' src='{{item.pictures[0]}}'></image>
   </view>
 </view>
+<view wx:if='{{item.topic && item.topic.title}}' class='tag'>{{item.topic.title}}</view>
