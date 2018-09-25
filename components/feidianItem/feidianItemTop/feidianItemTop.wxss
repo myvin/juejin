@@ -68,6 +68,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100rpx;
+  padding-right: 30rpx;
 }
 .topic .url {
   font-size: 22rpx;
