@@ -20,7 +20,7 @@
 <view class='topic' wx:if='{{item.urlTitle || item.url}}'>
   <view class='desc'>
     <view>{{item.urlTitle}}</view>
-    <view class='url'>{{item.url}}</view>
+    <view class='url'>{{filters.getUrlHostName(item.url)}}</view>
   </view>
   <image wx:if='{{item.urlPic}}' src='{{item.urlPic}}' mode='aspectFill'></image>
 </view>
