@@ -49,6 +49,9 @@ Page({
             this.setData({
               postInfo: data.d || {},
             })
+            wx.setNavigationBarTitle({
+              title: (data.d && data.d.user && data.d.user.username) || '掘金'
+            })
           }
         } else {
           wx.showToast({
@@ -114,6 +117,9 @@ Page({
           let entrylist = (data.d && data.d.entrylist) || []
           this.setData({
             postInfo: entrylist[0] || {},
+          })
+          wx.setNavigationBarTitle({
+            title: (entrylist[0].user && entrylist[0].user.username) || '掘金'
           })
         } else {
           wx.showToast({
