@@ -14,6 +14,6 @@
         <view>热门文章</view>
       </view>
     </view>
-    <recommendItem list='{{rankList}}' graphics='{{false}}'></recommendItem>
+    <recommendItem item='{{item}}' wx:for='{{rankList}}' wx:key='{{index}}' graphics='{{false}}'></recommendItem>
   </view>
 </view>
