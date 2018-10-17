@@ -1,5 +1,5 @@
 <wxs module='filters' src='../../filter/filter.wxs'></wxs>
-<view class="item {{graphics ? 'graphics' : ''}}" hover-class='hover-class' wx:for='{{list}}' wx:key='{{index}}' data-item='{{item}}' catchtap='toPostDetail'>
+<view class="item {{graphics ? 'graphics' : ''}}" hover-class='hover-class' data-item='{{item}}' catchtap='toPostDetail'>
   <view class='content'>
     <view class='title'>{{item.title}}</view>
     <view class='labels' wx:if='{{graphics}}'>

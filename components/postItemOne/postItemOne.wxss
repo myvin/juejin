@@ -7,9 +7,6 @@
   padding: 0 30rpx;
   background: #fff;
 }
-.item:last-child {
-  border-bottom: none;
-}
 .item .content {
   flex: 1;
   display: flex;
