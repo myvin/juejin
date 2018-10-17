@@ -1,9 +1,9 @@
 let utils = require('../../utils/utils.js')
 Component({
   properties: {
-    list: {
-      type: Array,
-      value: []
+    item: {
+      type: Object,
+      value: {}
     },
   },
   methods: {
