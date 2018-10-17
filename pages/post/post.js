@@ -5,6 +5,7 @@ Page({
   data: {
     postInfo: {},
     auth: '',
+    t: '',
   },
   onLoad(query) {
     let auth = utils.ifLogined()
@@ -13,6 +14,9 @@ Page({
     })
     let t = query.type
     let id = query.id
+    this.setData({
+      t,
+    })
     if (t === 'post') {
       this.getDetailData(query.id, 1)
       this.getDetailData(query.id, 2)

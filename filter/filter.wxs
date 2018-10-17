@@ -48,6 +48,9 @@ var strToNumArr = function (str) {
 
 // 获取 hostname
 var getUrlHostName = function (url) {
+  if (!url) {
+    return '';
+  }
   var arrUrl = url.split('//');
   var start = arrUrl[1] ? arrUrl[1].indexOf('/') : arrUrl[0].indexOf('/');
   var relUrl = arrUrl[1] ? arrUrl[1].substring(0, start) : arrUrl[0].substring(0, start);

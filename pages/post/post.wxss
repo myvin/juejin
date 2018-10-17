@@ -13,6 +13,21 @@
   font-weight: 700;
   line-height: 1.5;
 }
+.ori,
+.href {
+  font-size: 22rpx;
+  color: #999;
+}
+.ori text {
+  line-height: 1em;
+  display: inline-block;
+  padding: 6rpx 12rpx;
+  border-radius: 4rpx;
+  border: 1rpx solid #999;
+}
+.href text {
+  color: #819dba;
+}
 .user {
   display: flex;
   align-items: center;
