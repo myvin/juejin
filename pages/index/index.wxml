@@ -20,9 +20,9 @@
         <image catchtap='closeHot' class='close' src='/img/chart_close.png'></image>
       </view>
     </view>
-    <postItemOne list='{{hotRecomment}}' graphics='{{true}}'></postItemOne>
+    <postItemOne item='{{item}}' wx:for='{{hotRecomment}}' wx:key='{{index}}' graphics='{{true}}'></postItemOne>
   </view>
   <view class='timeline'>
-    <postItemTwo list='{{timeline}}'></postItemTwo>
+    <postItemTwo item='{{item}}' wx:for='{{timeline}}' wx:key='{{index}}'></postItemTwo>
   </view>
 </view>
