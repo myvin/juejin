@@ -1,37 +1,39 @@
 <wxs module='filters' src='../../../filter/filter.wxs' />
-<view class='user'>
-  <image class='avatar' mode='aspectFill' src='{{item.user.avatarLarge || "/img/default_avatar.png"}}'></image>
-  <view class='others'>
-    <view class='l'>
-      <view>{{item.user.username}}</view>
-      <view class='jobtitle'>
-        <text wx:if='{{item.user.jobTitle}}'>{{item.user.jobTitle}}</text>
-        <text wx:if='{{item.user.jobTitle && item.user.company}}'> @ {{item.user.company}} </text>
-        <text wx:if='{{item.user.jobTitle}}'> · </text>
-        <text>{{filters.timeBefore(item.createdAt)}}</text>
+<view style='overflow:hidden'>
+  <view class='user'>
+    <image class='avatar' mode='aspectFill' src='{{item.user.avatarLarge || "/img/default_avatar.png"}}'></image>
+    <view class='others'>
+      <view class='l'>
+        <view>{{item.user.username}}</view>
+        <view class='jobtitle'>
+          <text wx:if='{{item.user.jobTitle}}'>{{item.user.jobTitle}}</text>
+          <text wx:if='{{item.user.jobTitle && item.user.company}}'> @ {{item.user.company}} </text>
+          <text wx:if='{{item.user.jobTitle}}'> · </text>
+          <text>{{filters.timeBefore(item.createdAt)}}</text>
+        </view>
+      </view>
+      <view class='r'>
+        <image class='more' src='/img/ic_pin_more.png'></image>
       </view>
     </view>
-    <view class='r'>
-      <image class='more' src='/img/ic_pin_more.png'></image>
+  </view>
+  <text decode class='content {{intro ? "intro" : ""}}' data-id='{{item.objectId}}' catchtap='toFeidianDetail'>{{item.content}}</text>
+  <view class='topic' wx:if='{{item.urlTitle || item.url}}'>
+    <view class='desc'>
+      <view>{{item.urlTitle}}</view>
+      <view class='url'>{{filters.getUrlHostName(item.url)}}</view>
+    </view>
+    <image wx:if='{{item.urlPic}}' src='{{item.urlPic}}' mode='aspectFill'></image>
+  </view>
+  <view class='pictures' wx:if='{{item.pictures && item.pictures.length}}'>
+    <!-- 大于等于两张图片 -->
+    <view class='picture' style='width:33.33%;' wx:key='{{index}}' wx:for='{{item.pictures}}' wx:for-item='i' wx:if='{{item.pictures.length >= 2}}'>
+      <image wx:key='{{index}}' style='height:228rpx;' mode='aspectFill' src='{{i}}'></image>
+    </view>
+    <!-- 一张图片 -->
+    <view class='picture' style='width:80%' wx:if='{{item.pictures.length === 1}}'>
+      <image mode='widthFix' src='{{item.pictures[0]}}'></image>
     </view>
   </view>
+  <view wx:if='{{item.topic && item.topic.title}}' class='tag'>{{item.topic.title}}</view>
 </view>
-<text decode class='content {{intro ? "intro" : ""}}' data-id='{{item.objectId}}' catchtap='toFeidianDetail'>{{item.content}}</text>
-<view class='topic' wx:if='{{item.urlTitle || item.url}}'>
-  <view class='desc'>
-    <view>{{item.urlTitle}}</view>
-    <view class='url'>{{filters.getUrlHostName(item.url)}}</view>
-  </view>
-  <image wx:if='{{item.urlPic}}' src='{{item.urlPic}}' mode='aspectFill'></image>
-</view>
-<view class='pictures' wx:if='{{item.pictures && item.pictures.length}}'>
-  <!-- 大于等于两张图片 -->
-  <view class='picture' style='width:33.33%;' wx:key='{{index}}' wx:for='{{item.pictures}}' wx:for-item='i' wx:if='{{item.pictures.length >= 2}}'>
-    <image wx:key='{{index}}' style='height:228rpx;' mode='aspectFill' src='{{i}}'></image>
-  </view>
-  <!-- 一张图片 -->
-  <view class='picture' style='width:80%' wx:if='{{item.pictures.length === 1}}'>
-    <image mode='widthFix' src='{{item.pictures[0]}}'></image>
-  </view>
-</view>
-<view wx:if='{{item.topic && item.topic.title}}' class='tag'>{{item.topic.title}}</view>
