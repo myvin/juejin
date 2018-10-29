@@ -116,6 +116,12 @@ Page({
       },
     })
   },
+  toFeidianDetail(e) {
+    let id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/feidianDetail/feidianDetail?msgId=${id}`,
+    })
+  },
   onReachBottom() {
     this.pinListRecommend()
   },
