@@ -22,7 +22,7 @@ Page({
         free: false,
         img: author.img,
         price: author.price,
-        timeLimitDiscountFirstDay: author.timeLimitDiscountFirstDay,
+        timeLimitDiscountFirstDay: author.timeLimitDiscountFirstDay || 0,
       })
       wx.setNavigationBarTitle({
         title: '购买小册',
