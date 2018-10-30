@@ -131,6 +131,14 @@ Page({
     })
   },
   onShareAppMessage(res) {
-    return {}
+    let obj = {}
+    let from = res.from
+    if (from === 'button') {
+      let item = res.target.dataset.item
+      obj.title = `来自 ${item.user && item.user.username} 的沸点: ${item.content}`
+      obj.path = `/pages/feidianDetail/feidianDetail?msgId=${item.objectId}`
+      obj.imageUrl = (item.pictures && item.pictures[0]) || (item.user && item.user.avatarLarge)
+    }
+    return obj
   },
 })

@@ -11,8 +11,22 @@
   width: 36rpx;
   height: 36rpx;
   margin-right: 12rpx;
+  position: relative;
+  z-index: 2;
 }
 .footer .i {
   display: flex;
   align-items: center;
+  position: relative;
+}
+.footer button.share {
+  opacity: 0;
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }

@@ -9,5 +9,6 @@
   </view>
   <view class='i'>
     <image src='/img/fd_share.png'></image>
+    <button data-item='{{item}}' plain='true' open-type='share' class='share'></button>
   </view>
 </view>
