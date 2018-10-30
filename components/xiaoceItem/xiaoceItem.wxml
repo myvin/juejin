@@ -7,6 +7,7 @@
         <view><text class='isFinished' wx:if='{{!item.isFinished}}'>预售 · </text><text>{{item.lastSectionCount}}小节 · {{item.buyCount}}人已购买</text></view>
       </view>
     </view>
-    <view class='price' wx:if='{{!item.timeLimitDiscountFirstDay}}'>￥{{item.price}}</view>
-    <view class='price' wx:if='{{item.timeLimitDiscountFirstDay}}'>惠￥{{item.price * item.timeLimitDiscountFirstDay.discountCount / 10}}</view>
+    <!-- 小程序虚拟产品显示价格展示不合规，注释掉 -->
+    <!-- <view class='price' wx:if='{{!item.timeLimitDiscountFirstDay}}'>￥{{item.price}}</view>
+    <view class='price' wx:if='{{item.timeLimitDiscountFirstDay}}'>惠￥{{item.price * item.timeLimitDiscountFirstDay.discountCount / 10}}</view> -->
   </view>
