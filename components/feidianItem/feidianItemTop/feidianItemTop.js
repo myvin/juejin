@@ -11,6 +11,12 @@ Component({
     }
   },
   methods: {
+    toPersonal(e) {
+      let item = e.currentTarget.dataset.item
+      wx.navigateTo({
+        url: `/pages/personal/personal?thirduid=${item.user.objectId}`,
+      })
+    },
     toFeidianDetail (e) {
       let id = e.currentTarget.dataset.id
       wx.navigateTo({

@@ -1,11 +1,11 @@
 <wxs module='filters' src='../../../filter/filter.wxs' />
-<view style='overflow:hidden'>
+<view style='overflow:hidden' data-id='{{item.objectId}}' catchtap='toFeidianDetail'>
   <view class='user'>
-    <image class='avatar' mode='aspectFill' src='{{item.user.avatarLarge || "/img/default_avatar.png"}}'></image>
+    <image class='avatar' mode='aspectFill' src='{{item.user.avatarLarge || "/img/default_avatar.png"}}' data-item='{{item}}' catchtap='toPersonal'></image>
     <view class='others'>
       <view class='l'>
-        <view>{{item.user.username}}</view>
-        <view class='jobtitle'>
+        <view data-item='{{item}}' catchtap='toPersonal'>{{item.user.username}}</view>
+        <view data-item='{{item}}' catchtap='toPersonal' class='jobtitle'>
           <text wx:if='{{item.user.jobTitle}}'>{{item.user.jobTitle}}</text>
           <text wx:if='{{item.user.jobTitle && item.user.company}}'> @ {{item.user.company}} </text>
           <text wx:if='{{item.user.jobTitle}}'> · </text>
@@ -17,7 +17,7 @@
       </view>
     </view>
   </view>
-  <text decode class='content {{intro ? "intro" : ""}}' data-id='{{item.objectId}}' catchtap='toFeidianDetail'>{{item.content}}</text>
+  <text decode class='content {{intro ? "intro" : ""}}'>{{item.content}}</text>
   <view class='topic' wx:if='{{item.urlTitle || item.url}}'>
     <view class='desc'>
       <view>{{item.urlTitle}}</view>
