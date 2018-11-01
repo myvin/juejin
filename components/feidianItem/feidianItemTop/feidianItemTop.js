@@ -11,6 +11,15 @@ Component({
     }
   },
   methods: {
+    preview (e) {
+      let dataset = e.currentTarget.dataset
+      let urls = dataset.urls
+      let index = dataset.index
+      wx.previewImage({
+        urls,
+        current: urls[index],
+      })
+    },
     toPersonal(e) {
       let item = e.currentTarget.dataset.item
       wx.navigateTo({

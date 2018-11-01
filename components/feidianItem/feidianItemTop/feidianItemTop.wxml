@@ -27,11 +27,11 @@
   </view>
   <view class='pictures' wx:if='{{item.pictures && item.pictures.length}}'>
     <!-- 大于等于两张图片 -->
-    <view class='picture' style='width:33.33%;' wx:key='{{index}}' wx:for='{{item.pictures}}' wx:for-item='i' wx:if='{{item.pictures.length >= 2}}'>
+    <view data-index='{{index}}' data-urls='{{item.pictures}}' catchtap='preview' class='picture' style='width:33.33%;' wx:key='{{index}}' wx:for='{{item.pictures}}' wx:for-item='i' wx:if='{{item.pictures.length >= 2}}'>
       <image wx:key='{{index}}' style='height:228rpx;' mode='aspectFill' src='{{i}}'></image>
     </view>
     <!-- 一张图片 -->
-    <view class='picture' style='width:80%' wx:if='{{item.pictures.length === 1}}'>
+    <view data-index='{{index}}' data-urls='{{item.pictures}}' catchtap='preview' class='picture' style='width:80%' wx:if='{{item.pictures.length === 1}}'>
       <image mode='widthFix' src='{{item.pictures[0]}}'></image>
     </view>
   </view>
