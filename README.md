@@ -132,8 +132,6 @@
 
 ### 支付宝
 
-> 省事的可以先扫码领红包，然后扫支付宝将红包支付给我（商家）~
-
 <img src="https://raw.githubusercontent.com/myvin/miniprogram/master/9181893579988_.pic_hd.jpg" width="300" /> <img src="https://raw.githubusercontent.com/myvin/miniprogram/master/9191893579989_.pic.jpg" width="300" />
 
 ### 微信
