@@ -1,12 +1,12 @@
 <wxs module='filters' src='../../filter/filter.wxs'></wxs>
 <view class='container'>
-  <swiper autoplay circular interval="3500" duration="500" wx:if='{{bannerImgList.length}}' style='height:{{swiperHeight}}'>
+  <!-- <swiper autoplay circular interval="3500" duration="500" wx:if='{{bannerImgList.length}}' style='height:{{swiperHeight}}'>
     <block wx:for="{{bannerImgList}}" wx:key="{{index}}">
       <swiper-item>
         <image src='{{item.screenshot}}' class="banner" mode='widthFix'></image>
       </swiper-item>
     </block>
-  </swiper>
+  </swiper> -->
   <view class='hot card'>
     <view class='btitle'>
       <view class='l'>

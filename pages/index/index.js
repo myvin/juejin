@@ -30,49 +30,49 @@ Page({
       auth,
       logined: auth,
     })
-    this.getBannerImgList()
+    // this.getBannerImgList()
     this.getEntryByTimeline(true)
     if (auth) {
       this.getEntryByHotRecomment()
     }
   },
-  getBannerImgList() {
-    const auth = this.data.auth
-    wx.request({
-      url: `${config.bannerRequestUrl}/get_banner`,
-      data: {
-        position: 'explore',
-        page: 0,
-        pageSize: 20,
-        platform: 'android',
-        device_id: auth.clientId,
-        client_id: auth.clientId,
-        token: auth.token,
-        src: 'android',
-      },
-      success: (res) => {
-        let data = res.data
-        if (data.s === 1) {
-          let bannerImgList = (data.d && data.d.banner) || []
-          wx.setStorage({
-            key: 'bannerImgList',
-            data: bannerImgList,
-          })
-        } else {
-          wx.showToast({
-            title: data.m.toString(),
-            icon: 'none',
-          })
-        }
-      },
-      fail: () => {
-        wx.showToast({
-          title: '网路开小差，请稍后再试',
-          icon: 'none',
-        })
-      },
-    })
-  },
+  // getBannerImgList() {
+  //   const auth = this.data.auth
+  //   wx.request({
+  //     url: `${config.bannerRequestUrl}/get_banner`,
+  //     data: {
+  //       position: 'explore',
+  //       page: 0,
+  //       pageSize: 20,
+  //       platform: 'android',
+  //       device_id: auth.clientId,
+  //       client_id: auth.clientId,
+  //       token: auth.token,
+  //       src: 'android',
+  //     },
+  //     success: (res) => {
+  //       let data = res.data
+  //       if (data.s === 1) {
+  //         let bannerImgList = (data.d && data.d.banner) || []
+  //         wx.setStorage({
+  //           key: 'bannerImgList',
+  //           data: bannerImgList,
+  //         })
+  //       } else {
+  //         wx.showToast({
+  //           title: data.m.toString(),
+  //           icon: 'none',
+  //         })
+  //       }
+  //     },
+  //     fail: () => {
+  //       wx.showToast({
+  //         title: '网路开小差，请稍后再试',
+  //         icon: 'none',
+  //       })
+  //     },
+  //   })
+  // },
   // 获取 timeline 推荐列表
   // 翻页：将最后一条的 verifyCreatedAt 赋值给 before 字段即可
   getEntryByTimeline(reload) {
