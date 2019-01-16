@@ -20,19 +20,18 @@
       </view> -->
     </view>
 
-    <!-- <view class='card items'>
-      <view class='item'>
+    <view class='card items'>
+      <view class='item' catchtap='clearStorage'>
         <view class='title'>
-          <view>清除缓存</view>
+          <view>清除缓存数据</view>
         </view>
-        <view class='count'>0B</view>
       </view>
-      <view class='item'>
+      <!-- <view class='item'>
         <view class='title'>
           <view>自动检查粘贴板快速分享</view>
         </view>
-      </view>
-    </view> -->
+      </view> -->
+    </view>
 
     <view class='card items'>
       <navigator url='/pages/about/about'>

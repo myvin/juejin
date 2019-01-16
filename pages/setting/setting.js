@@ -47,6 +47,15 @@ Page({
       },
     })
   },
+  clearStorage () {
+    wx.clearStorage({
+      success () {
+        wx.switchTab({
+          url: '/pages/feidian/feidian',
+        })
+      }
+    })
+  },
   signout () {
     wx.showModal({
       title: '提示',
