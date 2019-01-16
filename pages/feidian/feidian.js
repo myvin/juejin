@@ -30,6 +30,21 @@ Page({
     this.getHotRecommendList()
     this.pinListRecommend(true)
   },
+  illegalToken (s) {
+    if (s === 3) {
+      wx.removeStorage({
+        key: 'auth',
+        complete () {
+          const timer = setTimeout(() => {
+            wx.navigateTo({
+              url: '/pages/login/login',
+            })
+            clearTimeout(timer)
+          }, 1000)
+        }
+      })
+    }
+  },
   initSwiper() {
     wx.getSystemInfo({
       success: (res) => {
@@ -58,6 +73,7 @@ Page({
             recommendList: (data.d && data.d.list) || [],
           })
         } else {
+          this.illegalToken(data.s)
           wx.showToast({
             title: data.m.toString(),
             icon: 'none',
@@ -99,6 +115,7 @@ Page({
             list: reload ? list : this.data.list.concat(list),
           })
         } else {
+          this.illegalToken(data.s)
           wx.showToast({
             title: data.m.toString(),
             icon: 'none',
