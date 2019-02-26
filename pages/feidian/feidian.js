@@ -28,7 +28,7 @@ Page({
     })
     this.initSwiper()
     this.getHotRecommendList()
-    this.pinListRecommend(true)
+    this.queryDongtai(true)
   },
   illegalToken (s) {
     if (s === 3) {
@@ -89,7 +89,7 @@ Page({
     })
   },
   // 沸点列表
-  pinListRecommend(reload) {
+  queryDongtai(reload) {
     const auth = this.data.auth
     let list = this.data.list
     if (utils.isEmptyObject(list) || reload) {
@@ -97,28 +97,36 @@ Page({
     }
     let createdAt = (list.slice(-1)[0].createdAt) || ''
     wx.request({
-      url: `${config.shortMsgMsRequestUrl}/pinList/recommend`,
+      url: `https://web-api.juejin.im/query`,
+      header: {
+        'X-Agent': 'Juejin/Web',
+        // 'X-Legacy-Device-Id': '1549612042913',
+        // 'X-Legacy-Token': 'eyJhY2Nlc3NfdG9rZW4iOiJDRUlYajJaOTRvQUdGczNwIiwicmVmcmVzaF90b2tlbiI6InczdXBHNnpoeFFBOGQzN24iLCJ0b2tlbl90eXBlIjoibWFjIiwiZXhwaXJlX2luIjoyNTkyMDAwfQ==',
+        // 'X-Legacy-Uid': '5b39bb10518825749d2d6d1e',
+      },
+      method: 'POST',
       data: {
-        uid: auth.uid,
-        device_id: auth.clientId,
-        token: auth.token,
-        src: 'web',
-        limit: this.data.COUNT,
-        before: createdAt,
+        operationName: '',
+        query: "",
+        variables: {
+          size: 20,
+          after: ''
+        },
+        extensions: {
+          query: {
+            id: '964dab26a3f9997283d173b865509890'
+          }
+        }
       },
       success: (res) => {
-        let data = res.data
-        if (data.s === 1) {
-          wx.hideLoading()
-          let list = (data.d && data.d.list) || []
+        let data = res.data || {}
+        data = data.data
+        if (!utils.isEmptyObject(data)) {
+          const items = data.recommendedActivityFeed.items
+          const edges = items.edges || []
+          console.error('ed: ', edges)
           this.setData({
-            list: reload ? list : this.data.list.concat(list),
-          })
-        } else {
-          this.illegalToken(data.s)
-          wx.showToast({
-            title: data.m.toString(),
-            icon: 'none',
+            list: this.data.list.concat(edges)
           })
         }
       },
@@ -140,7 +148,7 @@ Page({
     })
   },
   onReachBottom() {
-    this.pinListRecommend()
+    this.queryDongtai()
   },
   onPageScroll (e) {
     this.setData({
