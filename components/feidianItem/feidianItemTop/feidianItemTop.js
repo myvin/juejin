@@ -10,6 +10,17 @@ Component({
       value: true
     }
   },
+  data: {
+    actor: {},
+    target: {},
+  },
+  attached() {
+    const node = this.data.item.node
+    this.setData({
+      actor: node.actors[0],
+      target: node.targets[0],
+    })
+  },
   methods: {
     preview (e) {
       let dataset = e.currentTarget.dataset
