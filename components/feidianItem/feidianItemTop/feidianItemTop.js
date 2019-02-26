@@ -15,11 +15,13 @@ Component({
     target: {},
   },
   attached() {
-    const node = this.data.item.node
-    this.setData({
-      actor: node.actors[0],
-      target: node.targets[0],
-    })
+    const node = ((this.data.item || {}).node) || null
+    if (node) {
+      this.setData({
+        actor: node.actors[0],
+        target: node.targets[0],
+      })
+    }
   },
   methods: {
     preview (e) {
@@ -32,9 +34,9 @@ Component({
       })
     },
     toPersonal(e) {
-      let item = e.currentTarget.dataset.item
+      let actor = e.currentTarget.dataset.actor
       wx.navigateTo({
-        url: `/pages/personal/personal?thirduid=${item.user.objectId}`,
+        url: `/pages/personal/personal?thirduid=${actor.id}`,
       })
     },
     toFeidianDetail (e) {

@@ -1,11 +1,11 @@
 <wxs module='filters' src='../../../filter/filter.wxs' />
-<view style='overflow:hidden' data-id='{{item.objectId}}' catchtap='toFeidianDetail'>
+<view style='overflow:hidden' data-id='{{item.node.id}}' catchtap='toFeidianDetail'>
   <view class='user'>
-    <image class='avatar' mode='aspectFill' src='{{actor.avatarLarge || "/img/default_avatar.png"}}' data-item='{{item}}' catchtap='toPersonal'></image>
+    <image class='avatar' mode='aspectFill' src='{{actor.avatarLarge || "/img/default_avatar.png"}}' data-actor='{{actor}}' catchtap='toPersonal'></image>
     <view class='others'>
       <view class='l'>
-        <view data-item='{{item}}' catchtap='toPersonal'>{{actor.username}}</view>
-        <view data-item='{{item}}' catchtap='toPersonal' class='jobtitle'>
+        <view data-actor='{{actor}}' catchtap='toPersonal'>{{actor.username}}</view>
+        <view data-actor='{{actor}}' catchtap='toPersonal' class='jobtitle'>
           <text wx:if='{{actor.jobTitle}}'>{{item.user.jobTitle}}</text>
           <text wx:if='{{actor.jobTitle && actor.company}}'> @ {{item.user.company}} </text>
           <text wx:if='{{actor.jobTitle}}'> · </text>
