@@ -7,7 +7,7 @@ Component({
     // 默认显示摘要，不显示全文
     intro: {
       type: Boolean,
-      value: true
+      value: false
     }
   },
   data: {
@@ -40,10 +40,10 @@ Component({
       })
     },
     toFeidianDetail (e) {
-      let id = e.currentTarget.dataset.id
-      wx.navigateTo({
-        url: `/pages/feidianDetail/feidianDetail?msgId=${id}`,
-      })
+      // let id = e.currentTarget.dataset.id
+      // wx.navigateTo({
+      //   url: `/pages/feidianDetail/feidianDetail?msgId=${id}`,
+      // })
     },
   },
 })
