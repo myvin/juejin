@@ -29,7 +29,6 @@ Page({
       },
       success: (res) => {
         let data = res.data
-        console.log('---: ', data)
         if (data.s === 1) {
           let item = data.d || {}
           if (!utils.isEmptyObject(item)) {

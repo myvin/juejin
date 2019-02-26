@@ -124,7 +124,6 @@ Page({
         if (!utils.isEmptyObject(data)) {
           const items = data.recommendedActivityFeed.items
           const edges = items.edges || []
-          console.error('ed: ', edges)
           this.setData({
             list: this.data.list.concat(edges)
           })
