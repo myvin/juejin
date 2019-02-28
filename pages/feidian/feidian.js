@@ -8,6 +8,7 @@ Page({
     list: [],
     auth: {},
     scrollTop: 0,
+    after: ''
   },
   onShow () {
     // 如果 scrollTop 为 0，也 reload
@@ -93,16 +94,16 @@ Page({
     const auth = this.data.auth
     let list = this.data.list
     if (utils.isEmptyObject(list) || reload) {
-      list = [{ createdAt: '' }]
+      this.setData({
+        list: [],
+        after: '',
+      })
     }
-    let createdAt = (list.slice(-1)[0].createdAt) || ''
+    let after = ''
     wx.request({
       url: `https://web-api.juejin.im/query`,
       header: {
         'X-Agent': 'Juejin/Web',
-        // 'X-Legacy-Device-Id': '1549612042913',
-        // 'X-Legacy-Token': 'eyJhY2Nlc3NfdG9rZW4iOiJDRUlYajJaOTRvQUdGczNwIiwicmVmcmVzaF90b2tlbiI6InczdXBHNnpoeFFBOGQzN24iLCJ0b2tlbl90eXBlIjoibWFjIiwiZXhwaXJlX2luIjoyNTkyMDAwfQ==',
-        // 'X-Legacy-Uid': '5b39bb10518825749d2d6d1e',
       },
       method: 'POST',
       data: {
@@ -110,7 +111,7 @@ Page({
         query: "",
         variables: {
           size: 20,
-          after: ''
+          after: this.data.after,
         },
         extensions: {
           query: {
@@ -123,6 +124,9 @@ Page({
         data = data.data
         if (!utils.isEmptyObject(data)) {
           const items = data.recommendedActivityFeed.items
+          this.setData({
+            after: (items.pageInfo && items.pageInfo.endCursor) || ''
+          })
           const edges = items.edges || []
           this.setData({
             list: this.data.list.concat(edges)
