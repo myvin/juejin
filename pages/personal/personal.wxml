@@ -46,7 +46,7 @@
       </view>
       <view class='count'>{{userInfo.postedPostsCount}}</view>
     </view>
-    <view class='item' wx:if='{{userInfo.postedEntriesCount}}' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/sharePost/sharePost?thirduid={{thirduid}}' data-open='true'>
+    <view class='item' hover-class='hover-class' catchtap='navigatItem' data-url='/pages/sharePost/sharePost?thirduid={{thirduid}}' data-open='true'>
       <view class='title'>
         <view>分享文章</view>
       </view>
