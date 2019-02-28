@@ -49,16 +49,16 @@
         "selectedIconPath": "img/tab_home.png"
       },
       {
+        "pagePath": "pages/feidian/feidian",
+        "text": "动态",
+        "iconPath": "img/tab_activity_normal.png",
+        "selectedIconPath": "img/tab_activity.png"
+      },
+      {
         "pagePath": "pages/search/search",
         "text": "搜索",
         "iconPath": "img/tab_explore_normal.png",
         "selectedIconPath": "img/tab_explore.png"
-      },
-      {
-        "pagePath": "pages/feidian/feidian",
-        "text": "沸点",
-        "iconPath": "img/tab_feidian_normal.png",
-        "selectedIconPath": "img/tab_feidian.png"
       },
       {
         "pagePath": "pages/xiaoce/xiaoce",
