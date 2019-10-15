@@ -9,6 +9,7 @@ App({
   },
   globalData: {
     systeminfo: {},
+    imageServer: 'https://images.weserv.nl/',
     config: {
       loginRequestUrlByMobile: 'https://juejin.im/auth/type/phoneNumber',
       loginRequestUrlByEMail: 'https://juejin.im/auth/type/email',
