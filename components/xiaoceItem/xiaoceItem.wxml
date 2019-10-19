@@ -1,5 +1,5 @@
 <view class='list' wx:for='{{list}}' wx:key='{{index}}' data-id='{{item._id}}' catchtap='toXiaoceDetail'>
-    <image class='poster' src='{{item.img}}'></image>
+    <jImage class='poster' src='{{item.img}}'></jImage>
     <view class='info'>
       <view class='title'>{{item.title}}</view>
       <view class='author'>{{item.userData && item.userData.username}}</view>

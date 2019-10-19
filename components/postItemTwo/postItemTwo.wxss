@@ -23,7 +23,7 @@
   align-items: center;
   color: #333;
 }
-.header image {
+.header .avatar {
   width: 40rpx;
   height: 40rpx;
   border-radius: 50%;

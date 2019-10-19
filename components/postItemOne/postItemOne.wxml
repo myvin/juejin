@@ -20,5 +20,5 @@
       <text>{{item.collectionCount}}人喜欢 · {{item.user.username}} · {{filters.timeBefore(item.createdAt)}}</text>
     </view>
   </view>
-  <image mode='aspectFill' class='inset' src='{{item.screenshot}}' wx:if='{{item.screenshot}}'></image>
+  <jImage mode='aspectFill' class='inset' src='{{item.screenshot}}' wx:if='{{item.screenshot}}'></jImage>
 </view>

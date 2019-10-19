@@ -3,7 +3,7 @@
 <view class='item card' hover-class='hover-class' data-item='{{item}}' catchtap='toPostDetail'>
   <view class='header'>
     <view class='name' data-item='{{item}}' catchtap='toPersonal'>
-      <image mode='aspectFill' src='{{item.user.avatarLarge || "/img/default_avatar.png"}}'></image>
+      <jImage class='avatar' mode='aspectFill' src='{{item.user.avatarLarge || "/img/default_avatar.png"}}'></jImage>
       <view>{{item.user.username}}</view>
     </view>
     <view class='type'>{{filters.join(item.tags, 'title', ' / ')}}</view>

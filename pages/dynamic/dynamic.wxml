@@ -11,7 +11,7 @@
       </view>
       <view class='bottom'>
         <view class='tagcard'>
-          <image mode='aspectFill' src='{{item.users[0].avatarLarge || "/img/entry_image_default.png"}}'></image>
+          <jImage mode='aspectFill' src='{{item.users[0].avatarLarge || "/img/entry_image_default.png"}}'></jImage>
           <view class='others'>
             <view class='title'>{{item.users && item.users[0].username}}</view>
             <view class='info' wx:if='{{item.users && item.users[0].jobTitle && item.users[0].company}}'>{{item.users && item.users[0].jobTitle}} @ {{item.users && item.users[0].company}}</view>
@@ -29,7 +29,7 @@
       </view>
       <view class='bottom'>
         <view class='tagcard' data-id='{{item.entry && item.entry.objectId}}' catchtap='toPostDetail'>
-          <image mode='aspectFill' src='{{item.entry.screenshotUrl  || "/img/entry_image_default.png"}}'></image>
+          <jImage mode='aspectFill' src='{{item.entry.screenshotUrl  || "/img/entry_image_default.png"}}'></jImage>
           <view class='others'>
             <view class='title'>{{item.entry && item.entry.title}}</view>
           </view>
@@ -46,7 +46,7 @@
       </view>
       <view class='bottom'>
         <view class='imglist'>
-          <image mode='aspectFill' wx:for='{{item.tags}}' wx:key='{{idx}}' wx:for-index='idx' wx:for-item='i' src='{{i.icon}}'></image>
+          <jImage mode='aspectFill' wx:for='{{item.tags}}' wx:key='{{idx}}' wx:for-index='idx' wx:for-item='i' src='{{i.icon}}'></jImage>
         </view>
       </view>
     </view>

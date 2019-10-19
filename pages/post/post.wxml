@@ -1,11 +1,13 @@
 <import src="../../wxParse/wxParse.wxml"/>
 <wxs module='filters' src='../../filter/filter.wxs'></wxs>
 <view class='container'>
-  <image wx:if='{{postInfo.screenshot}}' style='width:100%;height:340rpx;' mode='aspectFill' src='{{postInfo.screenshot}}'></image>
+  <view style='width:100%;height:340rpx;'>
+    <jImage wx:if='{{postInfo.screenshot}}' mode='aspectFill' src='{{postInfo.screenshot}}'></jImage>
+  </view>
   <view class='content'>
     <view class='user'>
       <view class='avatar' catchtap='toPersonal'>
-        <image mode='aspectFill' src='{{(postInfo.user && postInfo.user.avatarLarge) || "/img/default_avatar.png"}}'></image>
+        <jImage mode='aspectFill' src='{{(postInfo.user && postInfo.user.avatarLarge) || "/img/default_avatar.png"}}'></jImage>
       </view>
       <view class='info'>
         <view class='name'>{{postInfo.user && postInfo.user.username}}</view>

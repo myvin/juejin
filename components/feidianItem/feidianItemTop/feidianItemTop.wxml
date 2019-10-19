@@ -1,7 +1,7 @@
 <wxs module='filters' src='../../../filter/filter.wxs' />
 <view style='overflow:hidden' data-id='{{item.node.id}}' catchtap='toFeidianDetail'>
   <view class='user'>
-    <image class='avatar' mode='aspectFill' src='{{actor.avatarLarge || "/img/default_avatar.png"}}' data-actor='{{actor}}' catchtap='toPersonal'></image>
+    <jImage class='avatar' mode='aspectFill' src='{{actor.avatarLarge || "/img/default_avatar.png"}}' data-actor='{{actor}}' catchtap='toPersonal'></jImage>
     <view class='others'>
       <view class='l'>
         <view data-actor='{{actor}}' catchtap='toPersonal'>{{actor.username}}</view>
@@ -23,16 +23,16 @@
       <view>{{target.urlTitle}}</view>
       <view class='url'>{{filters.getUrlHostName(target.url)}}</view>
     </view>
-    <image wx:if='{{target.urlPic}}' src='{{target.urlPic}}' mode='aspectFill'></image>
+    <jImage wx:if='{{target.urlPic}}' src='{{target.urlPic}}' mode='aspectFill'></jImage>
   </view>
   <view class='pictures' wx:if='{{target.pictures && target.pictures.length}}'>
     <!-- 大于等于两张图片 -->
-    <view data-index='{{index}}' data-urls='{{target.pictures}}' catchtap='preview' class='picture' style='width:33.33%;' wx:key='{{index}}' wx:for='{{target.pictures}}' wx:for-item='i' wx:if='{{target.pictures.length >= 2}}'>
-      <image wx:key='{{index}}' style='height:228rpx;' mode='aspectFill' src='{{i}}'></image>
+    <view data-index='{{index}}' data-urls='{{target.pictures}}' catchtap='preview' class='picture' style='width:33.33%;height:228rpx;' wx:key='{{index}}' wx:for='{{target.pictures}}' wx:for-item='i' wx:if='{{target.pictures.length >= 2}}'>
+      <jImage wx:key='{{index}}' mode='aspectFill' src='{{i}}'></jImage>
     </view>
     <!-- 一张图片 -->
-    <view data-index='{{index}}' data-urls='{{target.pictures}}' catchtap='preview' class='picture' style='width:80%' wx:if='{{target.pictures.length === 1}}'>
-      <image mode='widthFix' src='{{target.pictures[0]}}'></image>
+    <view data-index='{{index}}' data-urls='{{target.pictures}}' catchtap='preview' class='picture' style='width:80%;height:548rpx;' wx:if='{{target.pictures.length === 1}}'>
+      <jImage mode='widthFix' src='{{target.pictures[0]}}'></jImage>
     </view>
   </view>
   <view wx:if='{{target.topic && target.topic.title}}' class='tag'>{{target.topic.title}}</view>
