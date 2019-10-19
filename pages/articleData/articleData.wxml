@@ -1,7 +1,9 @@
 <wxs module='filters' src='../../filter/filter.wxs'></wxs>
 <view class='container'>
   <view class='item'>
-    <image class='avatar' mode='aspectFill' src='{{userInfo.avatarLarge || "/img/default_avatar.png"}}' wx:if='{{userInfo.avatarLarge}}'></image>
+    <view class='avatar'>
+      <jImage mode='aspectFill' src='{{userInfo.avatarLarge || "/img/default_avatar.png"}}' wx:if='{{userInfo.avatarLarge}}'></jImage>
+    </view>
     <view class='name'>{{userInfo.username}}</view>
     <view class='share'>分享 {{userInfo.postedEntriesCount}} 篇</view>
   </view>

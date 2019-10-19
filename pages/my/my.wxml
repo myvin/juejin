@@ -1,7 +1,7 @@
 <view class='wrapper'>
   <view class='card profile'  catchtap='navigatItem' data-url='/pages/personal/personal'>
     <view class='info'>
-      <image class='avatar' src='{{userInfo.avatarLarge}}' wx:if='{{userInfo.avatarLarge}}'></image>
+      <jImage class='avatar' src='{{userInfo.avatarLarge}}' wx:if='{{userInfo.avatarLarge}}'></jImage>
       <image class='avatar' src='/img/empty_avatar_user.png' wx:else></image>
       <view class='text'>
         <view class='name'>{{userInfo.username || '登录/注册'}}</view>

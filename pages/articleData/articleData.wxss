@@ -6,6 +6,7 @@
   font-size: 30rpx;
 }
 .avatar {
+  display: inline-block;
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;

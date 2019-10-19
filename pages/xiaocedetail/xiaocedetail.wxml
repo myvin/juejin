@@ -1,12 +1,12 @@
 <import src="../../wxParse/wxParse.wxml"/>
 <view>
   <view class='author'>
-    <image class='poster' src='{{author.img}}' mode='widthFix'></image>
+    <jImage class='poster' src='{{author.img}}' mode='widthFix'></jImage>
     <view class='content'>
       <view class='xiaoceTitle'>{{author.title}}</view>
       <view class='desc'>{{author.desc}}</view>
       <view class='user' catchtap='toPersonal' data-uid='{{author.userData && author.userData.uid}}'>
-        <image class='avatar' mode='aspectFill' src='{{author.userData && author.userData.avatarLarge}}'></image>
+        <jImage class='avatar' mode='aspectFill' src='{{author.userData && author.userData.avatarLarge}}'></jImage>
         <view class='name'>{{author.userData && author.userData.username}}</view>
       </view>
     </view>

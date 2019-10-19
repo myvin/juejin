@@ -10,7 +10,7 @@
     <swiper-item item-id='0'>
       <view class='users'>
         <view class='item' wx:for='{{listUser}}' wx:key='{{index}}'>
-          <image src='{{item.bgImg && item.bgImg.url}}' class='cover' mode='aspectFill'></image>
+          <jImage src='{{item.bgImg && item.bgImg.url}}' class='cover' mode='aspectFill'></jImage>
           <view class='content'>
             <view class='title'>{{item.title}}</view>
             <view class='others'>{{item.entryCount}}篇 · {{item.followCount}}关注</view>
@@ -22,7 +22,7 @@
     <swiper-item item-id='1'>
       <view class='follows' wx:if='{{listFollowed.length}}'>
         <view class='item' wx:for='{{listFollowed}}' wx:key='{{index}}'>
-          <image src='{{item.bgImg && item.bgImg.url}}' class='cover' mode='aspectFill'></image>
+          <jImage src='{{item.bgImg && item.bgImg.url}}' class='cover' mode='aspectFill'></jImage>
           <view class='content'>
             <view class='title'>{{item.title}}</view>
             <view class='others'>{{item.entryCount}}篇 · {{item.followCount}}关注 · 作者</view>

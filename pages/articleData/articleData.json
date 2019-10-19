@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "文章数据"
+  "navigationBarTitleText": "文章数据",
+  "usingComponents": {
+    "jImage": "/components/jImage/jImage"
+  }
 }
