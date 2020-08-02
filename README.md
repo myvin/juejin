@@ -2,11 +2,13 @@
 
 掘金第三方版--非掘金官方小程序
 
-# 提示
+## This project has temporarily deprecated because JueJin official apis have changed.
+
+## 提示
 
 官方已经对图片做了防盗链处理，所以小程序上绝大部分（极个别极个别 hostname 是 mirror 打头的头像可以显示出来）图片使用常规方法均无法正常显示（受小程序限制，也无法设置 referer）。简单粗暴的话，可以直接找第三方的图片服务，比如 [images.weserv.nl](https://images.weserv.nl/)，小程序里统一调整下图片 `src` 即可（可查看 [FFFXUE](https://github.com/FFFXUE/wx-juejin) 提供的修改）；想自力更生的，可以自己搭个图片 `server` 中转一下。
 
-# 声明
+## 声明
 
 ***这并不是掘金官方小程序（貌似没有搜到掘金 `APP` 对应的官方小程序），完全为第三者开发者开发，仅用于学习交流，禁止用于其他用途。若要使用官方正版，可访问掘金 [官方网站](https://juejin.im/)，或下载掘金官方 APP，或访问掘金官方其他途径。***
 
@@ -17,34 +19,27 @@
 
 ![](https://user-gold-cdn.xitu.io/2018/8/14/16538953d48291ef?w=344&h=344&f=jpeg&s=67848)
 
-# 利益相关
+## 利益相关
 
 无
 
-
-# 具体实现
-
-前段时间写了一个简单的小程序 [QuietWeather](https://github.com/myvin/quietweather)，[源码在这里](https://github.com/myvin/quietweather)，具体实现相关可查看这篇文章：[两天撸一个天气应用微信小程序](https://juejin.im/post/5b39bbcc5188252ce018c745)。但是这个 [掘金小程序](https://github.com/myvin/juejin) 和 [QuietWeather](https://github.com/myvin/quietweather) 完全不是一个数量级的，说完具体实现，天都黑了，这里直接上效果图，感兴趣的可以 [查看源码](https://github.com/myvin/juejin) 。实际体验可扫描👆上面的小程序码。
-
-# 效果图
+## 效果图
 
 >  对应页面可打开掘金官方 `APP` 对比
 
-> `PC` 开发者工具录制，会有些卡顿
-
 <img src='https://user-gold-cdn.xitu.io/2018/8/17/1654665c893411a1?w=375&h=667&f=gif&s=1571950'><img src='https://user-gold-cdn.xitu.io/2018/8/17/1654668f178b1e6c?w=375&h=667&f=gif&s=1902000'><img src='https://user-gold-cdn.xitu.io/2018/8/17/165466a23b637491?w=375&h=667&f=gif&s=1328318'><img src='https://user-gold-cdn.xitu.io/2018/8/17/165466afde516b27?w=375&h=667&f=gif&s=2003104'><img src='https://user-gold-cdn.xitu.io/2018/9/5/165a7e5700d6dbdc?w=375&h=667&f=gif&s=2073904'><img src='https://user-gold-cdn.xitu.io/2018/9/5/165a7e5bd7df804d?w=375&h=667&f=gif&s=651148'><img src='https://user-gold-cdn.xitu.io/2018/8/17/16546b3482680c2d?w=375&h=667&f=gif&s=428130'><img src='https://user-gold-cdn.xitu.io/2018/8/17/16546b38638cd558?w=375&h=667&f=gif&s=427959'><img src='https://user-gold-cdn.xitu.io/2018/8/17/16546caa90108b33?w=375&h=667&f=gif&s=3329762'><img src='https://user-gold-cdn.xitu.io/2018/8/17/165466ef8f0f0f3e?w=375&h=667&f=gif&s=131121'>
 
-> 文章数据入口调整了，也保留了动画，请酌情忽略 `gif` 卡顿
+> 文章数据入口调整了，也保留了动画
 
 <img src='https://user-gold-cdn.xitu.io/2018/8/17/165467078dc95a86?w=375&h=667&f=gif&s=33983'><img src='https://user-gold-cdn.xitu.io/2018/8/17/165467baad411893?w=375&h=667&f=gif&s=909792'><img src='https://user-gold-cdn.xitu.io/2018/8/17/16546bd4c1ef6b8e?w=375&h=667&f=gif&s=3563749'><img src='https://user-gold-cdn.xitu.io/2018/8/17/165467bddb5161ab?w=375&h=667&f=gif&s=1733393'><img src='https://user-gold-cdn.xitu.io/2018/8/17/165467c042b7fbb4?w=375&h=667&f=gif&s=171333'><img src='https://user-gold-cdn.xitu.io/2018/8/17/165467c318b6a087?w=375&h=668&f=gif&s=34910'><img src='https://user-gold-cdn.xitu.io/2018/8/17/165467faf44ed0bd?w=375&h=667&f=gif&s=39546'><img src='https://user-gold-cdn.xitu.io/2018/8/17/1654687295d78859?w=375&h=667&f=gif&s=12671'>
 
-# 完成度
+## 完成度
 
 `APP` 里面的东西实在是不少，包括页面和交互，要完全~~照抄~~实现确实需要一些时间和精力，`UI` 之类的都是简单测量+肉眼调试实现的，下面列出页面和交互的完成度，这里应该只是列出了绝大部分（还是上面那句话，`APP` 里面的东西实在是不少），未列出、未实现的后续会根据时间、精力来实现。
 
 实际完成度请以代码为主（线上小程序也会持续更新）。
 
-## 页面完成度
+### 页面完成度
 
 - [x] 启动页
 - [x] 登录、未登录跳转逻辑和页面数据刷新逻辑等
@@ -117,7 +112,7 @@
 - [ ] 喜欢
 - [ ] 未完待续部分...
 
-# 说明
+## 说明
 
 * 1、话说掘金的 `API` 域名（二级）真是多啊，小程序后台域名白名单最多只能配 `20` 个，现在已经占了 `16` 个了，感觉要完整~~抄完~~实现掘金 `APP` 版小程序，配额不够啊。不行的话，就只能搭个 `server` 代理了；
 * 2、个别接口只有 `APP` 用到了，请求字段需要按照 `web` 的略作调整；个别接口也要设置对应的 `header`；
