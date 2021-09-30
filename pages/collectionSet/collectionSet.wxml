@@ -9,7 +9,7 @@
   <swiper class='swiper' autoplay='{{false}}' indicator-dots='{{false}}' bindchange='swiperChanged' current='{{currentSwiper}}'>
     <swiper-item item-id='0'>
       <view class='users'>
-        <view class='item' wx:for='{{listUser}}' wx:key='{{index}}'>
+        <view class='item' wx:for='{{listUser}}' wx:key='index'>
           <jImage src='{{item.bgImg && item.bgImg.url}}' class='cover' mode='aspectFill'></jImage>
           <view class='content'>
             <view class='title'>{{item.title}}</view>
@@ -21,7 +21,7 @@
     </swiper-item>
     <swiper-item item-id='1'>
       <view class='follows' wx:if='{{listFollowed.length}}'>
-        <view class='item' wx:for='{{listFollowed}}' wx:key='{{index}}'>
+        <view class='item' wx:for='{{listFollowed}}' wx:key='index'>
           <jImage src='{{item.bgImg && item.bgImg.url}}' class='cover' mode='aspectFill'></jImage>
           <view class='content'>
             <view class='title'>{{item.title}}</view>

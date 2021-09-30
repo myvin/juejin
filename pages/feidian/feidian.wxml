@@ -1,7 +1,7 @@
 <view class='container'>
   <view class='recommendList'>
     <swiper autoplay='{{false}}' circular='{{false}}' duration="500" wx:if='{{recommendList.length}}' next-margin='100rpx' style='height:{{swiperHeight}}'>
-      <block wx:for="{{recommendList}}" wx:key="{{index}}">
+      <block wx:for="{{recommendList}}" wx:key="index">
         <swiper-item catchtap='toFeidianDetail' data-id='{{item.objectId}}'>
           <view class='item'>
             <view class='title' wx:if='{{item.isRecommend}}'>
@@ -24,6 +24,6 @@
     </swiper>
   </view>
   <view class='pinList'>
-    <feidianItem item='{{item}}' wx:for='{{list}}' wx:key='{{index}}'></feidianItem>
+    <feidianItem item='{{item}}' wx:for='{{list}}' wx:key='index'></feidianItem>
   </view>
 </view>

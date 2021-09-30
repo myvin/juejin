@@ -9,7 +9,7 @@
   </view>
   <view class='item'>
     <view class='count'>
-      <view class='countInner' style='transform:translateY(-{{100*(item.length-1)/item.length}}%)' wx:for='{{filters.strToNumArr(userInfo.totalCollectionsCount)}}' wx:key='{{index}}' wx:for-item='item' wx:for-index='index'>
+      <view class='countInner' style='transform:translateY(-{{100*(item.length-1)/item.length}}%)' wx:for='{{filters.strToNumArr(userInfo.totalCollectionsCount)}}' wx:key='index' wx:for-item='item' wx:for-index='index'>
         <view wx:for='{{item}}' wx:key='{{idx}}' wx:for-item='i' wx:for-index='idx'>{{i}}</view>
       </view>
     </view>
@@ -20,7 +20,7 @@
   </view>
   <view class='item'>
     <view class='count'>
-      <view class='countInner' style='transform:translateY(-{{100*(item.length-1)/item.length}}%)' wx:for='{{filters.strToNumArr(userInfo.totalViewsCount)}}' wx:key='{{index}}' wx:for-item='item' wx:for-index='index'>
+      <view class='countInner' style='transform:translateY(-{{100*(item.length-1)/item.length}}%)' wx:for='{{filters.strToNumArr(userInfo.totalViewsCount)}}' wx:key='index' wx:for-item='item' wx:for-index='index'>
         <view wx:for='{{item}}' wx:key='{{idx}}' wx:for-item='i' wx:for-index='idx'>{{i}}</view>
       </view>
     </view>
@@ -31,7 +31,7 @@
   </view>
   <view class='item'>
     <view class='count'>
-      <view class='countInner' style='transform:translateY(-{{100*(item.length-1)/item.length}}%)' wx:for='{{filters.strToNumArr(userInfo.totalCommentsCount)}}' wx:key='{{index}}' wx:for-item='item' wx:for-index='index'>
+      <view class='countInner' style='transform:translateY(-{{100*(item.length-1)/item.length}}%)' wx:for='{{filters.strToNumArr(userInfo.totalCommentsCount)}}' wx:key='index' wx:for-item='item' wx:for-index='index'>
         <view wx:for='{{item}}' wx:key='{{idx}}' wx:for-item='i' wx:for-index='idx'>{{i}}</view>
       </view>
     </view>

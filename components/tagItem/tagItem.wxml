@@ -1,4 +1,4 @@
-<view class='item' hover-class='hover-class' wx:for='{{list}}' wx:key='{{index}}'>
+<view class='item' hover-class='hover-class' wx:for='{{list}}' wx:key='index'>
   <image class='icon' mode='aspectFill' src='{{item.icon}}'></image>
   <view class='content'>
     <view class='text'>

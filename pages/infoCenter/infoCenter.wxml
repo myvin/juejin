@@ -10,7 +10,7 @@
   <swiper class='swiper' autoplay='{{false}}' indicator-dots='{{false}}' bindchange='swiperChanged' current='{{currentSwiper}}'>
     <swiper-item item-id='0'>
       <scroll-view scroll-y bindscrolltolower='getMoreUserNotification'>
-        <view class='item' wx:for='{{list}}' wx:key='{{index}}'>
+        <view class='item' wx:for='{{list}}' wx:key='index'>
           <view class='avatar' data-id='{{item.users[0].objectId}}' catchtap='toPersonal'>
             <image mode='aspectFill' src='{{item.users[0].avatarLarge || "/img/default_avatar.png"}}'></image>
           </view>

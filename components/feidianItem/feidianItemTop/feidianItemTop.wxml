@@ -27,8 +27,8 @@
   </view>
   <view class='pictures' wx:if='{{target.pictures && target.pictures.length}}'>
     <!-- 大于等于两张图片 -->
-    <view data-index='{{index}}' data-urls='{{target.pictures}}' catchtap='preview' class='picture' style='width:33.33%;height:228rpx;' wx:key='{{index}}' wx:for='{{target.pictures}}' wx:for-item='i' wx:if='{{target.pictures.length >= 2}}'>
-      <jImage wx:key='{{index}}' mode='aspectFill' src='{{i}}'></jImage>
+    <view data-index='{{index}}' data-urls='{{target.pictures}}' catchtap='preview' class='picture' style='width:33.33%;height:228rpx;' wx:key='index' wx:for='{{target.pictures}}' wx:for-item='i' wx:if='{{target.pictures.length >= 2}}'>
+      <jImage wx:key='index' mode='aspectFill' src='{{i}}'></jImage>
     </view>
     <!-- 一张图片 -->
     <view data-index='{{index}}' data-urls='{{target.pictures}}' catchtap='preview' class='picture' style='width:80%;height:548rpx;' wx:if='{{target.pictures.length === 1}}'>

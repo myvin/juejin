@@ -1,6 +1,6 @@
 <wxs module='filters' src='../../filter/filter.wxs'></wxs>
 <view class='container'>
-  <view class='item' wx:for='{{list}}' wx:key='{{index}}'>
+  <view class='item' wx:for='{{list}}' wx:key='index'>
     <view class='inner' wx:if='{{item.category === "follow"}}'>
       <view class='top'>
         <view class='l'>
