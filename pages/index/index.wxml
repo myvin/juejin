@@ -9,7 +9,7 @@
       <view class='r'>登录</view>
     </view>
   </navigator>
-  <view class='hot card' wx:if='{{hotRecomment.length && hotRrecommendShow}}'>
+  <view class='hot card' wx:if='{{list.length}}'>
     <view class='btitle'>
       <view class='l'>
         <image class='icon' src='/img/ic_hot_home.png'></image>
@@ -20,9 +20,6 @@
         <image catchtap='closeHot' class='close' src='/img/chart_close.png'></image>
       </view>
     </view>
-    <postItemTwo item='{{item}}' wx:for='{{hotRecomment}}' wx:key='index'></postItemTwo>
-  </view>
-  <view class='timeline'>
-    <postItemTwo item='{{item}}' wx:for='{{timeline}}' wx:key='index'></postItemTwo>
+    <postItemTwo wx:for='{{list}}' avatar='{{item.item_info.avatar || item.item_info.author_user_info.avatar_large}}' userName='{{item.item_info.author_name || item.item_info.author_user_info.user_name}}' tags='{{item.item_info.tags}}' title='{{item.item_info.title || item.item_info.article_info.title}}' briefContent='{{item.item_info.brief || item.item_info.article_info.brief_content}}' likeCount='{{item.item_info.digg_count}}' commentCount='{{item.item_info.comment_count}}' wx:for='{{list}}' wx:key='index'></postItemTwo>
   </view>
 </view>
