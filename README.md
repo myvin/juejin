@@ -1,6 +1,6 @@
 # 稀土掘金小程序
 
-![](https://user-gold-cdn.xitu.io/2018/8/14/16538953d48291ef?w=344&h=344&f=jpeg&s=67848)
+<img src="./materials/miniqrcode.jpeg" width="300" />
 
 稀土掘金第三方版--非稀土掘金官方应用
 
@@ -14,17 +14,19 @@
 
 ## 请喝咖啡
 
-如果我的项目对你有帮助，可以请我喝杯咖啡噢~
+如果我的项目对你有帮助，可以请我喝杯白开水。
 
 ### 支付宝
 
-<img src="https://raw.githubusercontent.com/myvin/miniprogram/master/9181893579988_.pic_hd.jpg" width="300" />
+<img src="./materials/ali_pay_code.jpeg" width="300" />
 
-<img src="https://raw.githubusercontent.com/myvin/miniprogram/master/9191893579989_.pic.jpg" width="300" />
+<img src="./materials/ali_bonus_code.jpeg" width="300" />
 
 ### 微信
 
-<img src="https://raw.githubusercontent.com/myvin/miniprogram/master/9201893579990_.pic_hd.jpg" width="300" />
+<img src="./materials/wechat_pay_code.jpeg" width="300" />
+
+<img src="./materials/wechat_like_code.jpeg" width="300" />
 
 ## License
 
