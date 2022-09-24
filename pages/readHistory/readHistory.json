@@ -1,7 +1,7 @@
 {
   "navigationBarTitleText": "阅读过的文章",
   "usingComponents": {
-    "readItem": "/components/postItemOne/postItemOne",
+    "readItem": "/components/postItemTwo/postItemTwo",
     "empty": "/components/empty/empty"
   }
 }

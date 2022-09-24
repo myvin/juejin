@@ -1,8 +1,7 @@
 {
-  "navigationBarTitleText": "掘金",
+  "navigationBarTitleText": "稀土掘金",
   "enablePullDownRefresh": true,
   "usingComponents": {
-    "postItemOne": "/components/postItemOne/postItemOne",
     "postItemTwo": "/components/postItemTwo/postItemTwo"
   }
 }

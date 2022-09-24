@@ -11,5 +11,5 @@
       <button class='login' formType='submit'>登录</button>
     </form>
   </view>
-  <view class='footer'>掘金·juejin.im</view>
+  <view class='footer'>稀土掘金·juejin.cn</view>
 </view>

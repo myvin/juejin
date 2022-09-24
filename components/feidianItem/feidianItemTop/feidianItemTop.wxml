@@ -1,15 +1,15 @@
 <wxs module='filters' src='../../../filter/filter.wxs' />
-<view style='overflow:hidden' data-id='{{item.node.id}}' catchtap='toFeidianDetail'>
+<view style='overflow:hidden' data-id='{{item.msg_id}}' catchtap='toFeidianDetail'>
   <view class='user'>
-    <jImage class='avatar' mode='aspectFill' src='{{actor.avatarLarge || "/img/default_avatar.png"}}' data-actor='{{actor}}' catchtap='toPersonal'></jImage>
+    <jImage class='avatar' mode='aspectFill' src='{{item.author_user_info.avatar_large || "/img/default_avatar.png"}}' data-user_id='{{item.author_user_info.user_id}}' catchtap='toPersonal'></jImage>
     <view class='others'>
       <view class='l'>
-        <view data-actor='{{actor}}' catchtap='toPersonal'>{{actor.username}}</view>
-        <view data-actor='{{actor}}' catchtap='toPersonal' class='jobtitle'>
-          <text wx:if='{{actor.jobTitle}}'>{{actor.jobTitle}}</text>
-          <text wx:if='{{actor.jobTitle && actor.company}}'> @ {{actor.company}} </text>
-          <text wx:if='{{actor.jobTitle}}'> · </text>
-          <text>{{filters.timeBefore(target.createdAt)}}</text>
+        <view catchtap='toPersonal' data-user_id='{{item.author_user_info.user_id}}'>{{item.author_user_info.user_name}}</view>
+        <view catchtap='toPersonal' data-user_id='{{item.author_user_info.user_id}}' class='jobtitle'>
+          <text wx:if='{{item.author_user_info.job_title}}'>{{item.author_user_info.job_title}}</text>
+          <text wx:if='{{item.author_user_info.company}}'> @ {{item.author_user_info.company}} </text>
+          <text wx:if='{{item.author_user_info.job_title}}'> · </text>
+          <text>{{filters.timeBefore(item.msg_Info.ctime)}}</text>
         </view>
       </view>
       <view class='r'>
@@ -17,23 +17,17 @@
       </view>
     </view>
   </view>
-  <text decode class='content {{intro ? "intro" : ""}}'>{{target.content}}</text>
-  <view class='topic' wx:if='{{target.urlTitle || target.url}}'>
-    <view class='desc'>
-      <view>{{target.urlTitle}}</view>
-      <view class='url'>{{filters.getUrlHostName(target.url)}}</view>
-    </view>
-    <jImage wx:if='{{target.urlPic}}' src='{{target.urlPic}}' mode='aspectFill'></jImage>
-  </view>
-  <view class='pictures' wx:if='{{target.pictures && target.pictures.length}}'>
+  <text decode class='content {{intro ? "intro" : ""}}'>{{item.msg_Info
+.content}}</text>
+  <view class='pictures' wx:if='{{item.msg_Info.pic_list && item.msg_Info.pic_list.length}}'>
     <!-- 大于等于两张图片 -->
-    <view data-index='{{index}}' data-urls='{{target.pictures}}' catchtap='preview' class='picture' style='width:33.33%;height:228rpx;' wx:key='index' wx:for='{{target.pictures}}' wx:for-item='i' wx:if='{{target.pictures.length >= 2}}'>
-      <jImage wx:key='index' mode='aspectFill' src='{{i}}'></jImage>
+    <view data-index='{{index}}' data-urls='{{item.msg_Info.pic_list}}' catchtap='preview' class='picture' style='width:33.33%;height:228rpx;' wx:key='index' wx:for='{{item.msg_Info.pic_list}}' wx:for-item='i' wx:if='{{item.msg_Info.pic_list.length >= 2}}'>
+      <image class='img' wx:key='index' mode='aspectFill' src='{{i}}'></image>
     </view>
     <!-- 一张图片 -->
-    <view data-index='{{index}}' data-urls='{{target.pictures}}' catchtap='preview' class='picture' style='width:80%;height:548rpx;' wx:if='{{target.pictures.length === 1}}'>
-      <jImage mode='widthFix' src='{{target.pictures[0]}}'></jImage>
+    <view data-index='{{index}}' data-urls='{{item.msg_Info.pic_list}}' catchtap='preview' class='picture' style='width:80%;' wx:if='{{item.msg_Info.pic_list.length === 1}}'>
+      <image class='img' mode='widthFix' src='{{item.msg_Info.pic_list[0]}}'></image>
     </view>
   </view>
-  <view wx:if='{{target.topic && target.topic.title}}' class='tag'>{{target.topic.title}}</view>
+  <view wx:if='{{item.topic.title}}' class='tag'>{{item.topic.title}}</view>
 </view>

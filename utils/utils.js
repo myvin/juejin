@@ -47,6 +47,11 @@ let ifLogined = () => {
   return false
 }
 
+let getUuid = () => {
+  let auth = wx.getStorageSync('auth') || {}
+  return auth.uuid
+}
+
 let navigatItem = (e) => {
   const url = e.currentTarget.dataset.url || '/pages/index/index'
   const open = e.currentTarget.dataset.open
@@ -65,28 +70,6 @@ let navigatItem = (e) => {
         url: '/pages/login/login'
       })
     }
-  }
-}
-
-// 页面重新加载情形：
-// 1、切换账号（包括登录、退出登录）;
-// 2、当前页面数据为空（可能是第一次进入该页面，或前 N 次进入该页面但是没有刷出来数据，这时候有必要重新加载）;
-let pageReload = (scopeAuth, dataList) => {
-  let auth = ifLogined()
-  let dataEmpty = (list) => {
-    let empty = false
-    let item = null
-    for (let i = 0, len = list.length; i < len; i++) {
-      item = list[i]
-      if (isEmptyObject(item)) {
-        empty = true
-        break
-      }
-    }
-    return empty
-  }
-  if ((auth.token !== scopeAuth.token || auth.uid !== scopeAuth.uid) || dataEmpty(dataList)) {
-    return true
   }
 }
 
@@ -146,8 +129,8 @@ module.exports = {
   isValidMobile,
   isEmptyObject,
   ifLogined,
+  getUuid,
   navigatItem,
-  pageReload,
   cmpVersion,
   getPostIdByOriginalUrl,
   toPostDetail,

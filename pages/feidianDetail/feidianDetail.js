@@ -3,42 +3,35 @@ const utils = require('../../utils/utils.js')
 Page({
   data: {
     item: [],
-    auth: {},
-    msgId: '',
   },
   onLoad(query) {
     if (query && query.msgId) {
-      let msgId = query && query.msgId
-      let auth = utils.ifLogined()
-      this.setData({
-        auth,
-      })
+      const msgId = query && query.msgId
       this.getById(msgId)
     }
   },
   getById(msgId) {
-    const auth = this.data.auth
     wx.request({
-      url: `${config.shortMsgMsRequestUrl}/getByID`,
+      url: `https://api.juejin.cn/content_api/v1/short_msg/detail?aid=2608&uuid=${utils.getUuid()}&spider=0`,
+      method: 'POST',
       data: {
-        uid: auth.uid || '',
-        msgId,
-        device_id: auth.clientId || '',
-        token: auth.token,
-        src: 'web',
+        msg_id: msgId,
       },
       success: (res) => {
         let data = res.data
-        if (data.s === 1) {
-          let item = data.d || {}
+        if (data.err_no === 0) {
+          let item = data.data || {}
           if (!utils.isEmptyObject(item)) {
             this.setData({
               item,
             })
+            wx.setNavigationBarTitle({
+              title: item.msg_Info.content || '沸点详情',
+            })
           }
         } else {
           wx.showToast({
-            title: data.m.toString(),
+            title: data.err_msg,
             icon: 'none',
           })
         }

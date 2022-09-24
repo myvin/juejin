@@ -11,10 +11,8 @@ Page({
     logined: true,
     rotate: '',
   },
-  onShow () {
-    if (utils.pageReload(this.data.auth, [this.data.timeline])) {
-      wx.startPullDownRefresh({})
-    }
+  onLoad () {
+    wx.startPullDownRefresh({})
   },
   onPullDownRefresh() {
     this.init()

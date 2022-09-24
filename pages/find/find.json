@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "搜索",
   "usingComponents": {
-    "recommendItem": "/components/postItemOne/postItemOne"
+    "recommendItem": "/components/postItemTwo/postItemTwo"
   }
 }

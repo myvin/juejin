@@ -3,17 +3,10 @@ const config = getApp().globalData.config
 const utils = require('../../utils/utils.js')
 Page({
   data: {
-    auth: {},
-    author: {},
-    sections: [],
+    detail: {},
   },
   onLoad(e) {
-    let auth = utils.ifLogined()
-    this.setData({
-      auth,
-    })
     let id = e.id
-    this.getAuthorDetail(id)
     this.getXiaoceDetail(id)
   },
   toPersonal(e) {
@@ -24,94 +17,37 @@ Page({
   toProbation (e) {
     let dataset = e.currentTarget.dataset
     wx.navigateTo({
-      url: `/pages/probation/probation?id=${dataset.sectionid}&isFree=${dataset.isfree}`,
-    })
-  },
-  // 获取作者信息
-  getAuthorDetail(id) {
-    let auth = this.data.auth
-    wx.request({
-      url: `${config.xiaoceCacheApiMs}/get`,
-      data: {
-        src: 'web',
-        uid: auth.uid || '',
-        client_id: auth.clientId,
-        token: auth.token,
-        id,
-      },
-      success: (res) => {
-        let data = res.data
-        if (data.s === 1) {
-          let author = data.d
-          if (!utils.isEmptyObject(author)) {
-            this.setData({
-              author,
-            })
-            // 设置 title 为小册标题
-            wx.setNavigationBarTitle({
-              title: author.title || '小册',
-            })
-            let article = (author.summaryHtml) || ''
-            WxParse.wxParse('article', 'html', article, this)
-          }
-        } else {
-          if (data.s === 2) {
-            // no result
-            this.setData({
-              noResult: true,
-            })
-          } else {
-            wx.showToast({
-              title: data.m.toString(),
-              icon: 'none',
-            })
-          }
-        }
-      },
-      fail: () => {
-        wx.showToast({
-          title: '网路开小差，请稍后再试',
-          icon: 'none',
-        })
-      },
-      complete: () => {
-        wx.stopPullDownRefresh()
-      },
+      url: `/pages/probation/probation?section_id=${dataset.section_id}`,
     })
   },
   // 获取小册详情
   getXiaoceDetail(id) {
-    let auth = this.data.auth
     wx.request({
-      url: `${config.xiaoceCacheApiMs}/getListSection`,
+      url: `https://api.juejin.cn/booklet_api/v1/booklet/get?aid=2608&uuid=${utils.getUuid()}&spider=0`,
+      method: 'POST',
       data: {
-        src: 'web',
-        uid: auth.uid || '',
-        client_id: auth.clientId,
-        token: auth.token,
-        id,
+        booklet_id: id,
       },
       success: (res) => {
         let data = res.data
-        if (data.s === 1) {
-          let sections = data.d
+        if (data.err_no === 0) {
+          data = data.data
+          wx.setNavigationBarTitle({
+            title: data.booklet.base_info.title || '小册',
+          })
+          WxParse.wxParse('article', 'html', data.introduction.content, this)
+
+          let sections = data.sections
           if (!utils.isEmptyObject(sections)) {
             this.setData({
-              sections,
+              detail: data,
             })
           }
         } else {
-          if (data.s === 2) {
-            // no result
-            this.setData({
-              noResult: true,
-            })
-          } else {
-            wx.showToast({
-              title: data.m.toString(),
-              icon: 'none',
-            })
-          }
+          wx.showToast({
+            title: data.err_msg,
+            icon: 'none',
+          })
         }
       },
       fail: () => {

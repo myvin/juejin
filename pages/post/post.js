@@ -54,7 +54,7 @@ Page({
               postInfo: data.d || {},
             })
             wx.setNavigationBarTitle({
-              title: (data.d && data.d.user && data.d.user.username) || '掘金'
+              title: (data.d && data.d.user && data.d.user.username) || '稀土掘金'
             })
           }
         } else {
@@ -123,7 +123,7 @@ Page({
             postInfo: entrylist[0] || {},
           })
           wx.setNavigationBarTitle({
-            title: (entrylist[0].user && entrylist[0].user.username) || '掘金'
+            title: (entrylist[0].user && entrylist[0].user.username) || '稀土掘金'
           })
         } else {
           wx.showToast({

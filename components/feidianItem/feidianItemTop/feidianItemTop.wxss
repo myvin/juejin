@@ -42,42 +42,18 @@
   overflow: hidden;
 }
 .pictures {
-  padding: 0 30rpx 30rpx;
+  padding: 0 30rpx;
+  margin-bottom: 30rpx;
   box-sizing: border-box;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  overflow: hidden;
 }
-.picture image {
+.picture .img {
   width: 100%;
   border: 1px solid #efefef;
   display: block;
-}
-.topic {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 30rpx 20rpx;
-  padding: 20rpx 30rpx;
-  background: #F4F6F9;
-  border-radius: 4rpx;
-}
-.topic .desc {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100rpx;
-  padding-right: 30rpx;
-}
-.topic .url {
-  font-size: 22rpx;
-  color: #999;
-}
-.topic image {
-  width: 100rpx;
-  height: 100rpx;
-  flex-shrink: 0;
 }
 .tag {
   font-size: 22rpx;

@@ -1,13 +1,10 @@
 <import src="../../wxParse/wxParse.wxml"/>
-<view class='wrapper' wx:if='{{free}}'>
+<view class='wrapper' wx:if='{{section.content}}'>
   <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
 </view>
-<view class='empty' wx:if='{{!free}}'>
-  <image src='{{img}}' mode='widthFix'></image>
+<view class='empty' wx:else>
+  <!-- <image src='{{img}}' mode='widthFix'></image> -->
   <view class='title'>此章节为付费章节</view>
   <view class='sub'>现在购买立即解锁全部内容</view>
-  <!-- 小程序虚拟产品显示价格展示不合规，注释掉 -->
-  <!-- <view class='btn' wx:if='{{!timeLimitDiscountFirstDay}}'>请去官方渠道购买 ￥{{price}}</view>
-  <view class='btn' wx:if='{{timeLimitDiscountFirstDay}}'>请去官方渠道购买 ￥{{price * timeLimitDiscountFirstDay.discountCount / 10}}</view> -->
   <view class='btn'>请去官方渠道购买</view>
 </view>

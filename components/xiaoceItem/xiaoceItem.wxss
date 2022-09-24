@@ -29,15 +29,25 @@
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
+.list .title .isNew {
+  font-size: 26rpx;
+  color: red;
+}
+.list .title .isVip {
+  font-size: 26rpx;
+  color: #d6b885;
+}
 .list .author {
   font-size: 24rpx;
+}
+.list .author .level,
+.list .author .vip {
+  color: #063d9a;
+  padding: 0 10rpx;
 }
 .list .others {
   font-size: 22rpx;
   color: #9999;
-}
-.list .others .isFinished {
-  color: rgb(246, 118, 4);
 }
 .list .price {
   display: flex;

@@ -4,24 +4,9 @@ Component({
       type: Object,
       value: {}
     },
-    // 默认显示摘要，不显示全文
-    intro: {
-      type: Boolean,
-      value: false
-    }
   },
-  data: {
-    actor: {},
-    target: {},
-  },
+  data: {},
   attached() {
-    const node = ((this.data.item || {}).node) || null
-    if (node) {
-      this.setData({
-        actor: node.actors[0],
-        target: node.targets[0],
-      })
-    }
   },
   methods: {
     preview (e) {
@@ -34,13 +19,13 @@ Component({
       })
     },
     toPersonal(e) {
-      let actor = e.currentTarget.dataset.actor
-      wx.navigateTo({
-        url: `/pages/personal/personal?thirduid=${actor.id}`,
-      })
+      const userId = e.currentTarget.dataset.user_id
+      // wx.navigateTo({
+      //   url: `/pages/personal/personal?thirduid=${userId}`,
+      // })
     },
     toFeidianDetail (e) {
-      // let id = e.currentTarget.dataset.id
+      let id = e.currentTarget.dataset.id
       // wx.navigateTo({
       //   url: `/pages/feidianDetail/feidianDetail?msgId=${id}`,
       // })

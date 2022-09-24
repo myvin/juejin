@@ -38,6 +38,7 @@
   justify-content: space-around;
   align-items: center;
   padding-bottom: 70rpx;
+  background-color: #fff;
 }
 .bottom image {
   width: 580rpx;

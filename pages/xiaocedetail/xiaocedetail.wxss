@@ -20,6 +20,14 @@
   font-size: 34rpx;
   font-weight: 900;
 }
+.author .xiaoceTitle .isNew {
+  font-size: 26rpx;
+  color: red;
+}
+.author .xiaoceTitle .isVip {
+  font-size: 26rpx;
+  color: #d6b885;
+}
 .author .desc {
   color: #666;
   font-size: 24rpx;

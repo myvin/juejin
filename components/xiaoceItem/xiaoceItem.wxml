@@ -1,13 +1,21 @@
-<view class='list' wx:for='{{list}}' wx:key='index' data-id='{{item._id}}' catchtap='toXiaoceDetail'>
-    <jImage class='poster' src='{{item.img}}'></jImage>
+<view class='list' wx:for='{{list}}' wx:key='index' data-id='{{item.booklet_id}}' catchtap='toXiaoceDetail'>
+    <jImage class='poster' src='{{item.base_info.cover_img}}'></jImage>
     <view class='info'>
-      <view class='title'>{{item.title}}</view>
-      <view class='author'>{{item.userData && item.userData.username}}</view>
+      <view class='title'>
+        <text class='isNew' wx:if='{{item.is_new}}'>新品 </text>
+        <text class='isVip' wx:if='{{item.base_info.can_vip_borrow}}'>VIP </text>
+        <text>{{item.base_info.title}}</text>
+      </view>
+      <view class='author'>
+        <text class='username'>{{item.user_info && item.user_info.user_name}}</text>
+        <text class='level' wx:if="{{item.user_info.level}}">LV.{{item.user_info.level}}</text>
+        <text class='vip' wx:if='{{item.user_info.is_vip}}'>VIP{{item.user_info.user_growth_info.vip_level}}</text>
+      </view>
       <view class='others'>
-        <view><text class='isFinished' wx:if='{{!item.isFinished}}'>预售 · </text><text>{{item.lastSectionCount}}小节 · {{item.buyCount}}人已购买</text></view>
+        <view><text>已更新{{item.section_updated_count}}小节 · {{item.base_info.buy_count}}人已购买</text></view>
       </view>
     </view>
     <!-- 小程序虚拟产品显示价格展示不合规，注释掉 -->
-    <!-- <view class='price' wx:if='{{!item.timeLimitDiscountFirstDay}}'>￥{{item.price}}</view>
-    <view class='price' wx:if='{{item.timeLimitDiscountFirstDay}}'>惠￥{{item.price * item.timeLimitDiscountFirstDay.discountCount / 10}}</view> -->
+    <!-- <view class='price' wx:if='{{!item.event_discount.discount_rate}}'>￥{{item.base_info.price / 100}}</view>
+    <view class='price' wx:if='{{item.event_discount.discount_rate}}'>惠￥{{item.base_info.price * item.event_discount.discount_rate / 10 / 100}}</view> -->
   </view>

@@ -9,9 +9,5 @@ Component({
     target: {},
   },
   attached() {
-    const node = this.data.item.node
-    this.setData({
-      target: node.targets[0],
-    })
   },
 })

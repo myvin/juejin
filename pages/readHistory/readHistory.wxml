@@ -1,4 +1,4 @@
 <empty wx:if='{{!list.length}}' tip='还没有阅读过文章'></empty>
 <view class='container' wx:if='{{list.length}}'>
-  <readItem item='{{item}}' wx:for='{{list}}' wx:key='index' graphics='{{false}}'></readItem>
+  <readItem item='{{item}}' wx:for='{{list}}' wx:key='index'></readItem>
 </view>

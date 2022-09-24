@@ -3,12 +3,11 @@
     "pages/launch/launch",
     "pages/index/index",
     "pages/my/my",
-    "pages/personal/personal",
     "pages/setting/setting",
     "pages/about/about",
     "pages/feidian/feidian",
     "pages/login/login",
-    "pages/search/search",
+    "pages/find/find",
     "pages/xiaoce/xiaoce",
     "pages/post/post",
     "pages/favorate/favorate",
@@ -21,7 +20,6 @@
     "pages/purchasedXiaoce/purchasedXiaoce",
     "pages/originalPost/originalPost",
     "pages/sharePost/sharePost",
-    "pages/articleData/articleData",
     "pages/subscribedTag/subscribedTag",
     "pages/manageTag/manageTag",
     "pages/dynamic/dynamic",
@@ -33,7 +31,7 @@
   "window": {
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#3281ff",
-    "navigationBarTitleText": "掘金",
+    "navigationBarTitleText": "稀土掘金",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
@@ -44,34 +42,35 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "主页",
+        "text": "首页",
         "iconPath": "img/tab_home_normal.png",
         "selectedIconPath": "img/tab_home.png"
       },
       {
         "pagePath": "pages/feidian/feidian",
-        "text": "动态",
+        "text": "沸点",
         "iconPath": "img/tab_activity_normal.png",
         "selectedIconPath": "img/tab_activity.png"
       },
       {
-        "pagePath": "pages/search/search",
-        "text": "搜索",
+        "pagePath": "pages/find/find",
+        "text": "发现",
         "iconPath": "img/tab_explore_normal.png",
         "selectedIconPath": "img/tab_explore.png"
       },
       {
         "pagePath": "pages/xiaoce/xiaoce",
-        "text": "小册",
+        "text": "课程",
         "iconPath": "img/tab_xiaoce_normal.png",
         "selectedIconPath": "img/tab_xiaoce.png"
       },
       {
         "pagePath": "pages/my/my",
-        "text": "我的",
+        "text": "我",
         "iconPath": "img/tab_profile_normal.png",
         "selectedIconPath": "img/tab_profile.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

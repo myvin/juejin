@@ -1,14 +1,14 @@
 <view class='footer'>
   <view class='i'>
-    <image wx:if='{{target.viewerHasLiked}}' src='/img/zan_green_feidian3.png'></image>
-    <image wx:if='{{!target.viewerHasLiked}}'  src='/img/zan_grey_feidian3.png'></image>
-    <text>{{target.likeCount || '赞'}}</text>
+    <image class='icon' wx:if='{{target.viewerHasLiked}}' src='/img/zan_green_feidian3.png'></image>
+    <image class='icon' wx:if='{{!target.viewerHasLiked}}'  src='/img/zan_grey_feidian3.png'></image>
+    <text>{{item.msg_Info.digg_ount || '赞'}}</text>
   </view>
   <view class='i'>
-    <image src='/img/fd_reply.png'></image><text>{{target.commentCount || '评论'}}</text>
+    <image class='icon' src='/img/fd_reply.png'></image><text>{{item.msg_Info.comment_count || '评论'}}</text>
   </view>
   <view class='i'>
-    <image src='/img/fd_share.png'></image>
+    <image class='icon' src='/img/fd_share.png'></image>
     <button data-item='{{item}}' plain='true' open-type='share' class='share'></button>
   </view>
 </view>

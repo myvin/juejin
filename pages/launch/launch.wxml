@@ -3,7 +3,7 @@
   <view class='top'>
     <view class='wrapper'>
       <image mode='widthFix' src='/img/launch_diamond.png'></image>
-      <view>相信科技的力量</view>
+      <view>相信科技 传递价值</view>
     </view>
   </view>
   <view class='bottom'>

@@ -3,71 +3,39 @@ const config = getApp().globalData.config
 const utils = require('../../utils/utils.js')
 Page({
   data: {
-    auth: {},
-    img: '',
-    free: true,
-    price: 0,
-    timeLimitDiscountFirstDay: 0,
+    section: {},
   },
   onLoad(e) {
-    let auth = utils.ifLogined()
-    this.setData({
-      auth,
-    })
-    if (e.isFree === 'false') {
-      let pages = getCurrentPages()
-      let currentPage = pages[pages.length - 2]
-      let author = currentPage.data.author
-      this.setData({
-        free: false,
-        img: author.img,
-        price: author.price,
-        timeLimitDiscountFirstDay: author.timeLimitDiscountFirstDay || 0,
-      })
-      wx.setNavigationBarTitle({
-        title: '购买小册',
-      })
-      return
-    }
-    this.getSection(e.id)
+    this.getSection(e.section_id)
   },
   // 获取作者信息
   getSection(id) {
     wx.showLoading({
       title: '加载中',
     })
-    let auth = this.data.auth
     wx.request({
-      url: `${config.xiaoceCacheApiMs}/getSection`,
+      url: `https://api.juejin.cn/booklet_api/v1/section/get?aid=2608&uuid=${utils.getUuid()}&spider=0`,
+      method: 'POST',
       data: {
-        src: 'web',
-        uid: auth.uid || '',
-        client_id: auth.clientId,
-        token: auth.token,
-        sectionId: id,
+        section_id: id,
       },
       success: (res) => {
         let data = res.data
-        if (data.s === 1) {
+        if (data.err_no === 0) {
           wx.hideLoading()
-          let d = data.d
-          if (!utils.isEmptyObject(d)) {
-            // 设置 title 为小册标题
-            wx.setNavigationBarTitle({
-              title: d.title || '试读',
-            })
-            let article = (d.html) || ''
-            WxParse.wxParse('article', 'html', article, this)
-          }
+          data = data.data
+          this.setData({
+            section: data.section || {},
+          })
+          wx.setNavigationBarTitle({
+            title: data.section.draft_title || '试读',
+          })
+          WxParse.wxParse('article', 'html', (data.section.content) || '', this)
         } else {
-          if (data.s === 4) {
-            wx.hideLoading()
-          } else {
-            wx.showToast({
-              title: data.m.toString(),
-              icon: 'none',
-            })
-          }
+          wx.showToast({
+            title: data.err_msg,
+            icon: 'none',
+          })
         }
       },
       fail: () => {

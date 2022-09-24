@@ -1,3 +1,10 @@
+var secondTime = 1000;
+var minTime = 60 * secondTime;
+var hourTime = 60 * 60 * 1000;
+var dayTime = 24 * hourTime;
+var monthTime = 30 * dayTime;
+var yearTime = 12 * monthTime;
+
 var join = function (arr, item, separator) {
   arr = arr || [];
   // 最多取前两个 tag
@@ -6,18 +13,11 @@ var join = function (arr, item, separator) {
   }).join(separator);
 };
 
-var timeBefore = function (date) {
-  if (!date) {
+var timeBefore = function (time) {
+  if (!time) {
     return '';
   }
-  var rexp = getRegExp('TZ', 'g');
-  date = date.replace(rexp, ' ');
-  var dvalue = parseInt(getDate().getTime()) - parseInt(getDate(date).getTime());
-  var minTime = 60 * 1000;
-  var hourTime = 60 * 60 * 1000;
-  var dayTime = 24 * hourTime;
-  var monthTime = 30 * dayTime;
-  var yearTime = 12 * monthTime;
+  var dvalue = parseInt(getDate().getTime()) - parseInt(getDate(time*1000).getTime());
   if (dvalue < minTime) {
     return '刚刚';
   } else if (dvalue >= minTime && dvalue < hourTime) {
@@ -57,9 +57,24 @@ var getUrlHostName = function (url) {
   return relUrl;
 }
 
+var formatDuration = function (time) {
+  var str = '';
+  var units = ['小时', '分', '秒'];
+  var values = [hourTime, minTime, secondTime];
+  var i = 0;
+  for (i = 0, len = values.length; i <len; i++) {
+    if (Math.floor(time / values[i]) !== 0) {
+      str += Math.floor(time / values[i]) + units[i];
+    }
+    time = time % values[i];
+  }
+  return str;
+}
+
 module.exports = {
   join: join,
   timeBefore: timeBefore,
   strToNumArr: strToNumArr,
   getUrlHostName: getUrlHostName,
+  formatDuration: formatDuration,
 };

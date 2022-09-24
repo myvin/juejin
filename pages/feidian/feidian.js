@@ -2,40 +2,29 @@ const config = getApp().globalData.config
 const utils = require('../../utils/utils.js')
 Page({
   data: {
-    COUNT: 30,
     swiperHeight: 'auto',
     recommendList: [],
     list: [],
     auth: {},
     scrollTop: 0,
-    after: ''
+    after: '',
+    cursor: 0,
   },
-  onShow () {
-    // 如果 scrollTop 为 0，也 reload
-    if (utils.pageReload(this.data.auth, [this.data.list]) || !this.data.scrollTop) {
-      wx.startPullDownRefresh({})
-    }
+  onLoad() {
+    wx.startPullDownRefresh({})
   },
   onPullDownRefresh() {
     this.init()
   },
   init() {
-    this.setData({
-      auth: {},
-    })
-    let auth = utils.ifLogined()
-    this.setData({
-      auth,
-    })
     this.initSwiper()
-    this.getHotRecommendList()
     this.queryDongtai(true)
   },
-  illegalToken (s) {
+  illegalToken(s) {
     if (s === 3) {
       wx.removeStorage({
         key: 'auth',
-        complete () {
+        complete() {
           const timer = setTimeout(() => {
             wx.navigateTo({
               url: '/pages/login/login',
@@ -55,81 +44,34 @@ Page({
       },
     })
   },
-  // 热门推荐列表
-  getHotRecommendList() {
-    const auth = this.data.auth
-    wx.request({
-      url: `${config.shortMsgMsRequestUrl}/getHotRecommendList`,
-      data: {
-        uid: auth.uid,
-        device_id: auth.clientId,
-        client_id: auth.client_id,
-        token: auth.token,
-        src: 'web',
-      },
-      success: (res) => {
-        let data = res.data
-        if (data.s === 1) {
-          this.setData({
-            recommendList: (data.d && data.d.list) || [],
-          })
-        } else {
-          this.illegalToken(data.s)
-          wx.showToast({
-            title: data.m.toString(),
-            icon: 'none',
-          })
-        }
-      },
-      fail: () => {
-        wx.showToast({
-          title: '网路开小差，请稍后再试',
-          icon: 'none',
-        })
-      },
-    })
-  },
   // 沸点列表
   queryDongtai(reload) {
-    const auth = this.data.auth
     let list = this.data.list
     if (utils.isEmptyObject(list) || reload) {
       this.setData({
         list: [],
-        after: '',
       })
     }
-    let after = ''
     wx.request({
-      url: `https://web-api.juejin.im/query`,
-      header: {
-        'X-Agent': 'Juejin/Web',
-      },
+      url: `https://api.juejin.cn/recommend_api/v1/short_msg/recommend?aid=2608&uuid=${utils.getUuid()}&spider=0`,
       method: 'POST',
       data: {
-        operationName: '',
-        query: "",
-        variables: {
-          size: 20,
-          after: this.data.after,
-        },
-        extensions: {
-          query: {
-            id: '964dab26a3f9997283d173b865509890'
-          }
-        }
+        "id_type": 4,
+        "sort_type": 300,
+        "cursor": this.data.cursor.toString(),
+        "limit": 20
       },
       success: (res) => {
         let data = res.data || {}
-        data = data.data
-        if (!utils.isEmptyObject(data)) {
-          const items = data.recommendedActivityFeed.items
+        if (data.err_no === 0) {
           this.setData({
-            after: (items.pageInfo && items.pageInfo.endCursor) || ''
+            cursor: data.cursor,
+            list: this.data.list.concat(data.data)
           })
-          const edges = items.edges || []
-          this.setData({
-            list: this.data.list.concat(edges)
+        } else {
+          wx.showToast({
+            title: data.err_msg,
+            icon: 'none',
           })
         }
       },
@@ -153,7 +95,7 @@ Page({
   onReachBottom() {
     this.queryDongtai()
   },
-  onPageScroll (e) {
+  onPageScroll(e) {
     this.setData({
       scrollTop: e.scrollTop,
     })
@@ -163,9 +105,9 @@ Page({
     let from = res.from
     if (from === 'button') {
       let item = res.target.dataset.item
-      obj.title = `来自 ${item.user && item.user.username} 的沸点: ${item.content}`
-      obj.path = `/pages/feidianDetail/feidianDetail?msgId=${item.objectId}`
-      obj.imageUrl = (item.pictures && item.pictures[0]) || (item.user && item.user.avatarLarge)
+      obj.title = `来自 ${item.author_user_info.user_name} 的沸点: ${item.msg_Info.content}`
+      obj.path = `/pages/feidianDetail/feidianDetail?msgId=${item.msg_id}`
+      obj.imageUrl = (item.msg_Info && item.msg_Info.pic_list[0]) || (item.author_user_info && item.author_user_info.avatar_large)
     }
     return obj
   },

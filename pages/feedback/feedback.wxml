@@ -1,8 +1,8 @@
 <view class='container'>
   <view class='content'>
     <view class='item'>
-      <view class='title'>给 掘金 官方反馈</view>
-      <view>请使用 掘金 官方渠道（APP、网站等）进行反馈。</view>
+      <view class='title'>给 稀土掘金 官方反馈</view>
+      <view>请使用 稀土掘金 官方渠道（APP、网站等）进行反馈。</view>
       <view>该小程序完全为第三方开发者开发，仅用于学习交流，禁止用于其他用途。</view>
     </view>
     <view class='item'>
