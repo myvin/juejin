@@ -1,6 +1,8 @@
 # 稀土掘金小程序
 
-![小程序码](./materials/miniqrcode.jpeg)
+<p align='center'>
+  <img src='./materials/miniqrcode.jpg' style='width:300px;'>
+</p>
 
 稀土掘金第三方版--非稀土掘金官方应用
 
@@ -18,15 +20,15 @@
 
 ### 支付宝
 
-![支付宝收款码](materials/ali_pay_code.jpeg)
+<img src='./materials/ali_pay_code.jpeg' style='width:300px;'>
 
-![支付宝红包码](materials/ali_bonus_code.jpeg)
+<img src='./materials/ali_bonus_code.jpeg' style='width:300px;'>
 
 ### 微信
 
-![微信收款码](materials/wechat_pay_code.jpeg)
+<img src='./materials/wechat_pay_code.jpeg' style='width:300px;'>
 
-![微信赞赏码](materials/wechat_like_code.jpeg)
+<img src='./materials/wechat_like_code.jpeg' style='width:300px;'>
 
 ## License
 
