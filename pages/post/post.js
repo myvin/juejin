@@ -3,23 +3,12 @@ const config = getApp().globalData.config
 const utils = require('../../utils/utils.js')
 Page({
   data: {
-    postInfo: {},
-    auth: '',
-    t: '',
+    item: {},
   },
   onLoad(query) {
-    let auth = utils.ifLogined()
-    this.setData({
-      auth,
-    })
-    let t = query.type
-    let id = query.id
-    this.setData({
-      t,
-    })
     if (t === 'post') {
-      this.getDetailData(query.id, 1)
-      this.getDetailData(query.id, 2)
+      this.getDetailData(query.article_id, 1)
+      this.getDetailData(query.article_id, 2)
     } else {
       this.getEntryView(id)
       this.getEntryByIds(id)

@@ -15,11 +15,7 @@
         <image class='icon' src='/img/ic_hot_home.png'></image>
         <view>热门推荐</view>
       </view>
-      <view class='r'>
-        <image catchtap='refreshHot' class='refresh {{rotate}}' src='/img/refresh_icon.png'></image>
-        <image catchtap='closeHot' class='close' src='/img/chart_close.png'></image>
-      </view>
     </view>
-    <postItemTwo wx:for='{{list}}' avatar='{{item.item_info.avatar || item.item_info.author_user_info.avatar_large}}' userName='{{item.item_info.author_name || item.item_info.author_user_info.user_name}}' tags='{{item.item_info.tags}}' title='{{item.item_info.title || item.item_info.article_info.title}}' briefContent='{{item.item_info.brief || item.item_info.article_info.brief_content}}' likeCount='{{item.item_info.digg_count}}' commentCount='{{item.item_info.comment_count}}' wx:for='{{list}}' wx:key='index'></postItemTwo>
+    <postItemTwo wx:for='{{list}}' avatar='{{item.item_info.avatar || item.item_info.author_user_info.avatar_large}}' userName='{{item.item_info.author_name || item.item_info.author_user_info.user_name}}' tags='{{item.item_info.tags}}' title='{{item.item_info.title || item.item_info.article_info.title}}' briefContent='{{item.item_info.brief || item.item_info.article_info.brief_content}}' likeCount='{{item.item_info.digg_count}}' commentCount='{{item.item_info.comment_count}}' wx:for='{{list}}' adUrl='{{item.item_info.url}}' wx:key='index'></postItemTwo>
   </view>
 </view>

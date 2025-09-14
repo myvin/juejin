@@ -1,10 +1,6 @@
 let utils = require('../../utils/utils.js')
 Component({
   properties: {
-    item: {
-      type: Object,
-      value: {}
-    },
     avatar: {
       type: String,
       value: '/img/default_avatar.png'
@@ -36,11 +32,37 @@ Component({
     tags: {
       type: Array,
       value: []
+    },
+    articleId: {
+      type: String,
+      value: ''
+    },
+    adUrl: {
+      type: String,
+      value: ''
     }
   },
   methods: {
     toPostDetail(e) {
-      utils.toPostDetail(e)
+      if (this.data.adUrl) {
+        wx.setClipboardData({
+          data: this.data.adUrl,
+          success(res) {
+            console.error('res1 ', res)
+            wx.showToast({
+              title: '链接已复制，请在浏览器中打开',
+              icon: 'none',
+            })
+          },
+          fail(res) {
+            console.error('res ', res)
+          }
+        })
+      } else {
+        wx.navigateTo({
+          url: `/pages/post/post?id=${e.currentTarget.dataset.article_id}`,
+        })
+      }
     },
     toPersonal(e) {
       let item = e.currentTarget.dataset.item

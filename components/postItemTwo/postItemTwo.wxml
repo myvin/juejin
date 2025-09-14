@@ -1,28 +1,31 @@
 <wxs module='filters' src='../../filter/filter.wxs'></wxs>
 <!-- type: post, article -->
-<view class='item card' hover-class='hover-class' catchtap='toPostDetail'>
+<view class='item card' data-article_id='{{articleId}}' hover-class='hover-class' catchtap='toPostDetail'>
   <view class='header'>
     <view class='name' catchtap='toPersonal'>
-      <jImage class='avatar' mode='aspectFill' src='{{avatar}}'></jImage>
+      <jImage class='avatar' mode='aspectFit' src='{{avatar}}'></jImage>
       <view>{{userName}}</view>
     </view>
-    <view class='type'>{{filters.join(tags, 'tag_name', ' / ')}}</view>
+    <view class="ad" wx:if='{{adUrl.length}}'>广告</view>
+    <view class='type' wx:else>{{filters.join(tags, 'tag_name', ' / ')}}</view>
   </view>
-  <view class='content'>
-    <view class='text'>
-      <view class='title'>{{title}}</view>
-      <view class='desc'>{{briefContent}}</view>
+  <view class="main">
+    <view class='content'>
+      <view class='text'>
+        <view class='title'>{{title}}</view>
+        <view class='desc'>{{briefContent}}</view>
+      </view>
+      <image mode='aspectFit' class='img' src='{{coverImage}}' wx:if='{{coverImage}}'></image>
     </view>
-    <image mode='aspectFit' class='img' src='{{coverImage}}' wx:if='{{coverImage}}'></image>
-  </view>
-  <view class='footer'>
-    <view class='label'>
-      <image src='/img/ic_dynamic_collect.png'></image>
-      <view>{{likeCount || '喜欢'}}</view>
-    </view>
-    <view class='label'>
-      <image src='/img/ic_dynamic_comment.png'></image>
-      <view>{{commentCount || '评论'}}</view>
+    <view class='footer'>
+      <view class='label'>
+        <image src='/img/ic_dynamic_collect.png'></image>
+        <view>{{likeCount || '喜欢'}}</view>
+      </view>
+      <view class='label'>
+        <image src='/img/ic_dynamic_comment.png'></image>
+        <view>{{commentCount || '评论'}}</view>
+      </view>
     </view>
   </view>
 </view>

@@ -23,11 +23,24 @@
   align-items: center;
   color: #333;
 }
+.ad {
+  border: 1rpx solid #c9cdd4;
+  box-sizing: border-box;
+  border-radius: 4rpx;
+  line-height: 36rpx;
+  width: 84rpx;
+  text-align: center;
+  color: #c9cdd4;
+  font-size: 26rpx;
+}
 .header .avatar {
   width: 40rpx;
   height: 40rpx;
   border-radius: 50%;
   margin-right: 10rpx;
+}
+.main {
+  border-bottom: 1rpx solid #e5e6eb;
 }
 .content {
   display: flex;

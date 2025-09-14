@@ -34,8 +34,8 @@
     "minifyWXML": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.3.1",
-  "appid": "wx0f72a9f832b78889",
+  "libVersion": "3.9.3",
+  "appid": "wx1886e5e27420ca24",
   "projectname": "juejin",
   "condition": {},
   "packOptions": {

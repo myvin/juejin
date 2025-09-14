@@ -57,28 +57,8 @@ Page({
       },
     })
   },
-  refreshHot() {
-    this.setData({
-      rotate: 'rotate',
-    })
-    let timer = setTimeout(() => {
-      this.setData({
-        rotate: '',
-      })
-      clearTimeout(timer)
-    }, 800)
-    let hotRecomment = this.data.hotRecomment
-    this.userFilterEntry(hotRecomment.map(item => {
-      return item.objectId
-    }))
-  },
-  closeHot() {
-    this.setData({
-      hotRrecommendShow: false,
-    })
-  },
   onReachBottom() {
-    this.getEntryByTimeline()
+    this.getList()
   },
   onShareAppMessage(res) {
     return {}

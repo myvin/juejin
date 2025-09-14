@@ -37,12 +37,3 @@
   display: flex;
   align-items: center;
 }
-.btitle .r .refresh {
-  width: 32rpx;
-  height: 22rpx;
-}
-.btitle .r .close {
-  width: 20rpx;
-  height: 20rpx;
-  margin-left: 40rpx;
-}
